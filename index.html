@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KINEOIRIS Photography — Packages &amp; Investment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   KINEOIRIS PHOTOGRAPHY — EXACT DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  --bg-dark: #121212;
+  --bg-olive: #383521;
+  --bg-olive-deep: #2d2a1a;
+  --btn-tan: #7d735c;
+  --btn-tan-hover: #91866d;
+  --text-cream: #e8e2d5;
+  --text-white: #f4f1ea;
+  --text-muted: #c2bba9;
+  --border-subtle: rgba(232, 226, 213, 0.35);
+
+  --font-display: 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+  color: var(--text-cream);
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Neutral clean blank placeholder when local image files are not yet added */
+img.img-missing {
+  opacity: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   1. HERO & NAVIGATION HEADER
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 540px;
+  height: 62vh;
+  max-height: 760px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #241e18;
+  overflow: hidden;
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #2a231c;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 20, 16, 0.42) 0%,
+    rgba(24, 20, 16, 0.34) 55%,
+    rgba(18, 18, 18, 0.55) 100%
+  );
+}
+
+/* Top Navigation Bar */
+.main-nav {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 36px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-white);
+  opacity: 0.88;
+  transition: opacity 0.2s ease;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 1;
+  border-bottom-color: rgba(244, 241, 234, 0.65);
+}
+
+/* Center Logo */
+.brand-logo-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.brand-logo-img {
+  max-height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.wordmark-main {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: var(--text-white);
+}
+
+.wordmark-sub {
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.36em;
+  color: var(--text-cream);
+  margin-top: 3px;
+}
+
+/* Right CTA Button */
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-connect {
+  background-color: var(--btn-tan);
+  color: var(--text-white);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 0;
+  transition: background-color 0.2s ease;
+}
+
+.btn-connect:hover {
+  background-color: var(--btn-tan-hover);
+}
+
+/* Center Hero Heading */
+.hero-center-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin: auto 0;
+  padding: 0 20px 28px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--text-cream);
+  margin-bottom: 8px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  color: var(--text-white);
+  text-transform: uppercase;
+}
+
+/* Bottom Concave/Convex Transition Curve */
+.hero-curve-bottom {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 46px;
+  line-height: 0;
+  margin-bottom: -1px;
+}
+
+.hero-curve-bottom svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   2. FIVE-COLUMN CATEGORY STRIP
+   ========================================================================== */
+
+.categories-section {
+  background-color: var(--bg-dark);
+  padding: 58px 36px 84px;
+}
+
+.categories-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.category-img-box {
+  width: 100%;
+  aspect-ratio: 3 / 4.2;
+  background-color: #1e1e1e;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-img {
+  transform: scale(1.03);
+}
+
+.category-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-cream);
+  margin-bottom: 11px;
+}
+
+.btn-learn-more {
+  background-color: var(--btn-tan);
+  color: var(--text-white);
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 0;
+  transition: background-color 0.2s ease;
+}
+
+.btn-learn-more:hover {
+  background-color: var(--btn-tan-hover);
+}
+
+/* ==========================================================================
+   3. FULL-BLEED TESTIMONIAL BANNER
+   ========================================================================== */
+
+.testimonial-section {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  padding: 86px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #211b17;
+  overflow: hidden;
+}
+
+.testimonial-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #261f1a;
+}
+
+.testimonial-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.testimonial-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 16, 13, 0.54);
+}
+
+.testimonial-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.7vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.quote-mark {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  vertical-align: super;
+  opacity: 0.85;
+}
+
+.quote-open {
+  margin-right: 4px;
+}
+
+.quote-close {
+  margin-left: 4px;
+}
+
+.testimonial-body {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 300;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  color: var(--text-cream);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   4. WEDDING PACKAGES & ACCORDION SECTION
+   ========================================================================== */
+
+.packages-section {
+  background-color: var(--bg-olive);
+  padding: 96px 36px 104px;
+}
+
+.packages-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Left Portrait Frame */
+.packages-image-col {
+  width: 100%;
+}
+
+.packages-portrait-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4.2;
+  background-color: var(--bg-olive-deep);
+  overflow: hidden;
+}
+
+.packages-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Right Packages Details */
+.packages-details-col {
+  padding-top: 12px;
+  color: var(--text-cream);
+}
+
+.packages-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.95rem, 3.2vw, 2.65rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: 0.1em;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.packages-description {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text-cream);
+  margin-bottom: 18px;
+}
+
+.whats-included-block {
+  margin-top: 26px;
+  margin-bottom: 34px;
+}
+
+.included-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-white);
+  border-bottom: 1px solid rgba(232, 226, 213, 0.55);
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+.included-text {
+  font-family: var(--font-sans);
+  font-size: 0.71rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-cream);
+}
+
+/* Accordion List */
+.accordion-list {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 16px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  transition: opacity 0.2s ease;
+}
+
+.accordion-header:hover {
+  opacity: 0.85;
+}
+
+.accordion-title {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-white);
+}
+
+.accordion-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-cream);
+  transition: transform 0.25s ease;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  overflow: hidden;
+}
+
+.accordion-panel-inner {
+  padding: 4px 2px 22px;
+}
+
+.pkg-price {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-white);
+  margin-bottom: 10px;
+}
+
+.pkg-features {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.pkg-features li {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-cream);
+  padding-left: 14px;
+  position: relative;
+}
+
+.pkg-features li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--btn-tan-hover);
+}
+
+.btn-inquire-inline {
+  background-color: var(--btn-tan);
+  color: var(--text-white);
+  font-size: 0.56rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-inquire-inline:hover {
+  background-color: var(--btn-tan-hover);
+}
+
+/* ==========================================================================
+   5. FOOTER & MANDATORY CREDIT
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--bg-dark);
+  border-top: 1px solid rgba(232, 226, 213, 0.12);
+  padding: 42px 24px 28px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.footer-nav-row a {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.footer-nav-row a:hover {
+  color: var(--text-white);
+}
+
+.footer-tagline {
+  font-size: 0.58rem;
+  font-weight: 300;
+  letter-spacing: 0.26em;
+  color: rgba(232, 226, 213, 0.55);
+}
+
+.footer-credit-bar {
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(232, 226, 213, 0.08);
+  width: 100%;
+  text-align: center;
+}
+
+.palex-credit {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: rgba(232, 226, 213, 0.62);
+  transition: color 0.2s ease;
+}
+
+.palex-credit:hover {
+  color: var(--text-white);
+}
+
+/* ==========================================================================
+   6. INTERACTIVE MODALS
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(10, 10, 10, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  background-color: #1c1b15;
+  border: 1px solid rgba(232, 226, 213, 0.25);
+  padding: 38px 34px;
+  color: var(--text-cream);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-box-wide {
+  max-width: 760px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--text-white);
+}
+
+.modal-eyebrow {
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--btn-tan-hover);
+  margin-bottom: 6px;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-white);
+  margin-bottom: 14px;
+}
+
+.modal-desc {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-cream);
+  margin-bottom: 20px;
+}
+
+.modal-highlights {
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid var(--btn-tan);
+  font-size: 0.72rem;
+  line-height: 1.75;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+/* Inquiry Form */
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background-color: #121212;
+  border: 1px solid rgba(232, 226, 213, 0.25);
+  color: var(--text-white);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  padding: 10px 12px;
+  outline: none;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--btn-tan-hover);
+}
+
+.form-feedback {
+  font-size: 0.72rem;
+  color: #d6c89d;
+  min-height: 18px;
+}
+
+/* Gallery Grid in Modal */
+.gallery-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.gallery-thumb {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background-color: #121212;
+  overflow: hidden;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-thumb span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), transparent);
+  font-size: 0.56rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+/* ==========================================================================
+   7. PROPORTIONAL RESPONSIVE SCALING (PRESERVING VISUAL IDENTITY)
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .main-nav {
+    padding: 20px 24px;
+  }
+
+  .nav-left {
+    gap: 16px;
+  }
+
+  .categories-section {
+    padding: 48px 24px 68px;
+  }
+
+  .categories-container {
+    gap: 12px;
+  }
+
+  .category-title {
+    font-size: 0.88rem;
+  }
+
+  .btn-learn-more {
+    padding: 6px 10px;
+    font-size: 0.5rem;
+  }
+
+  .packages-section {
+    padding: 72px 24px 80px;
+  }
+
+  .packages-container {
+    gap: 36px;
+  }
+}
+
+@media (max-width: 720px) {
+  .main-nav {
+    padding: 16px 14px;
+    gap: 8px;
+  }
+
+  .nav-left {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+  }
+
+  .brand-logo-img {
+    max-height: 32px;
+  }
+
+  .wordmark-main {
+    font-size: 1rem;
+  }
+
+  .btn-connect {
+    padding: 8px 12px;
+    font-size: 0.54rem;
+    letter-spacing: 0.14em;
+  }
+
+  .hero-section {
+    min-height: 400px;
+    height: 48vh;
+  }
+
+  /* Keep the 5-column strip proportional on compact screens with horizontal fit or 3+2 balanced scaling */
+  .categories-section {
+    padding: 36px 12px 54px;
+  }
+
+  .categories-container {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .category-img-box {
+    margin-bottom: 10px;
+  }
+
+  .category-title {
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 7px;
+  }
+
+  .btn-learn-more {
+    padding: 5px 6px;
+    font-size: 0.44rem;
+    letter-spacing: 0.08em;
+  }
+
+  .testimonial-section {
+    padding: 56px 18px;
+    min-height: 290px;
+  }
+
+  .packages-section {
+    padding: 54px 18px 64px;
+  }
+
+  .packages-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .packages-details-col {
+    padding-top: 0;
+  }
+
+  .packages-heading {
+    font-size: 1.45rem;
+    margin-bottom: 14px;
+  }
+
+  .packages-description,
+  .included-text {
+    font-size: 0.64rem;
+    line-height: 1.65;
+  }
+
+  .accordion-title {
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 440px) {
+  .packages-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .categories-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .categories-container .category-card:last-child {
+    grid-column: span 2;
+    max-width: 50%;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .category-title {
+    font-size: 0.85rem;
+  }
+
+  .btn-learn-more {
+    font-size: 0.54rem;
+    padding: 7px 14px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO & NAVIGATION SECTION -->
+  <header class="hero-section" id="top">
+    <div class="hero-bg-wrapper">
+      <img src="image01.jpg" alt="Moody editorial wedding photography in warm sunlight" class="hero-bg-img" onerror="this.classList.add('img-missing')">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="nav-left">
+        <a href="#about-modal" class="nav-link" data-modal="about-modal">ABOUT</a>
+        <a href="#packages" class="nav-link active">INVESTMENT</a>
+        <a href="#gallery-modal" class="nav-link" data-modal="gallery-modal">GALLERY</a>
+      </div>
+
+      <a href="#top" class="brand-logo-link" aria-label="KINEOIRIS Photography Home">
+        <img src="logo.jpg" alt="KINEOIRIS Photography Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="brand-wordmark" style="display: none;">
+          <span class="wordmark-main">KINEOIRIS</span>
+          <span class="wordmark-sub">PHOTOGRAPHY</span>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <button type="button" class="btn-connect" data-modal="connect-modal">LET'S CONNECT</button>
+      </div>
+    </nav>
+
+    <div class="hero-center-content">
+      <p class="hero-eyebrow">EXPLORE THE</p>
+      <h1 class="hero-title">PACKAGES</h1>
+    </div>
+
+    <!-- Subtle downward convex curve at bottom of hero -->
+    <div class="hero-curve-bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,0 Q720,70 1440,0 L1440,70 L0,70 Z" fill="#121212"></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- 5-COLUMN CATEGORY STRIP -->
+  <section class="categories-section" id="categories" aria-label="Photography Categories">
+    <div class="categories-container">
+      <article class="category-card">
+        <div class="category-img-box">
+          <img src="image02.jpg" alt="Weddings photography" class="category-img" onerror="this.classList.add('img-missing')">
+        </div>
+        <h2 class="category-title">WEDDINGS</h2>
+        <button type="button" class="btn-learn-more" data-category="weddings">LEARN MORE</button>
+      </article>
+
+      <article class="category-card">
+        <div class="category-img-box">
+          <img src="image03.jpg" alt="Elopements photography" class="category-img" onerror="this.classList.add('img-missing')">
+        </div>
+        <h2 class="category-title">ELOPEMENTS</h2>
+        <button type="button" class="btn-learn-more" data-category="elopements">LEARN MORE</button>
+      </article>
+
+      <article class="category-card">
+        <div class="category-img-box">
+          <img src="image04.jpg" alt="Intimate photography" class="category-img" onerror="this.classList.add('img-missing')">
+        </div>
+        <h2 class="category-title">INTIMATE</h2>
+        <button type="button" class="btn-learn-more" data-category="intimate">LEARN MORE</button>
+      </article>
+
+      <article class="category-card">
+        <div class="category-img-box">
+          <img src="image05.jpg" alt="Adventure photography" class="category-img" onerror="this.classList.add('img-missing')">
+        </div>
+        <h2 class="category-title">ADVENTURE</h2>
+        <button type="button" class="btn-learn-more" data-category="adventure">LEARN MORE</button>
+      </article>
+
+      <article class="category-card">
+        <div class="category-img-box">
+          <img src="image06.jpg" alt="Lifestyle photography" class="category-img" onerror="this.classList.add('img-missing')">
+        </div>
+        <h2 class="category-title">LIFESTYLE</h2>
+        <button type="button" class="btn-learn-more" data-category="lifestyle">LEARN MORE</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- FULL-BLEED TESTIMONIAL BANNER -->
+  <section class="testimonial-section" aria-label="Client Testimonial">
+    <div class="testimonial-bg-wrapper">
+      <img src="image07.jpg" alt="Close-up romantic couple portrait" class="testimonial-bg-img" onerror="this.classList.add('img-missing')">
+      <div class="testimonial-overlay"></div>
+    </div>
+
+    <div class="testimonial-content">
+      <blockquote class="testimonial-quote-block">
+        <h2 class="testimonial-heading">
+          <span class="quote-mark quote-open">&ldquo;</span>MEMORABLE MOMENTS<span class="quote-mark quote-close">&rdquo;</span>
+        </h2>
+        <p class="testimonial-body">
+          Karen literally makes you feel like she is a great friend that came to shoot one of your most special days. People asked me multiple times after our wedding how long we have known the gal that did our photography, because she was so personable and friendly. She truly was invested and part of our day, not just someone shooting from the sidelines. Thank you for shooting our most memorable moments.
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- WEDDING PACKAGES & ACCORDION SECTION -->
+  <section class="packages-section" id="packages" aria-labelledby="wedding-packages-heading">
+    <div class="packages-container">
+      <!-- Left Portrait Image -->
+      <div class="packages-image-col">
+        <div class="packages-portrait-frame">
+          <img src="image08.jpg" alt="Editorial bride and groom portrait" class="packages-portrait-img" onerror="this.classList.add('img-missing')">
+        </div>
+      </div>
+
+      <!-- Right Package Details & Accordions -->
+      <div class="packages-details-col">
+        <h2 class="packages-heading" id="wedding-packages-heading">
+          <span>WEDDING</span>
+          <span>PACKAGES</span>
+        </h2>
+
+        <p class="packages-description">
+          No matter how you envision your wedding day or how much coverage you require, I have packages to capture every moment, from getting ready to the dance floor celebrations. You can relax knowing that every special moment will be beautifully captured for you to relive over and over.
+        </p>
+
+        <p class="packages-description">
+          Getting married outside of Colorado? I'm always up for an adventure! Reach out to learn about my destination wedding packages and travel fees!
+        </p>
+
+        <div class="whats-included-block">
+          <h3 class="included-label">WHATS INCLUDED?</h3>
+          <p class="included-text">
+            Optional engagement session, getting ready photos, full ceremony, family photos, reception photos, sunset couples photos
+          </p>
+        </div>
+
+        <div class="accordion-list" role="region" aria-label="Wedding Package Tiers">
+          <!-- Accordion Item 1 -->
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">HALF DAY (6 HOURS)</span>
+              <span class="accordion-chevron" aria-hidden="true">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-panel-inner">
+                <p class="pkg-price">Starting at $2,800</p>
+                <ul class="pkg-features">
+                  <li>Up to 6 consecutive hours of wedding day coverage</li>
+                  <li>Complimentary 1-hour Colorado engagement session</li>
+                  <li>Custom timeline consultation &amp; vendor coordination</li>
+                  <li>High-resolution edited online gallery with full print release</li>
+                  <li>Sneak peek gallery delivered within 72 hours</li>
+                </ul>
+                <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Half Day (6 Hours)">INQUIRE ABOUT HALF DAY</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">FULL DAY (8 HOURS)</span>
+              <span class="accordion-chevron" aria-hidden="true">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-panel-inner">
+                <p class="pkg-price">Starting at $3,600</p>
+                <ul class="pkg-features">
+                  <li>Up to 8 consecutive hours from prep through reception</li>
+                  <li>Complimentary 90-minute engagement session</li>
+                  <li>Second photographer included for multi-angle coverage</li>
+                  <li>High-resolution edited online gallery with full print release</li>
+                  <li>Sneak peek gallery delivered within 48 hours</li>
+                </ul>
+                <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Full Day (8 Hours)">INQUIRE ABOUT FULL DAY</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">EXTENDED COVERAGE (10 HOURS)</span>
+              <span class="accordion-chevron" aria-hidden="true">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-panel-inner">
+                <p class="pkg-price">Starting at $4,400</p>
+                <ul class="pkg-features">
+                  <li>Up to 10 consecutive hours including grand exit coverage</li>
+                  <li>Complimentary engagement session + bridal portrait session</li>
+                  <li>Second photographer included all day</li>
+                  <li>Custom heirloom linen-bound photo album credit ($300 value)</li>
+                  <li>Full online gallery with print rights &amp; 48-hour sneak peeks</li>
+                </ul>
+                <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Extended Coverage (10 Hours)">INQUIRE ABOUT EXTENDED</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBTLE EDITORIAL FOOTER & MANDATORY CREDIT -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-nav-row">
+        <a href="#about-modal" data-modal="about-modal">ABOUT</a>
+        <a href="#categories">COLLECTIONS</a>
+        <a href="#packages">WEDDINGS</a>
+        <a href="#gallery-modal" data-modal="gallery-modal">GALLERY</a>
+        <a href="#connect-modal" data-modal="connect-modal">LET'S CONNECT</a>
+      </div>
+      <p class="footer-tagline">KINEOIRIS PHOTOGRAPHY &bull; COLORADO &amp; WORLDWIDE</p>
+      <div class="footer-credit-bar">
+        <a href="https://palexdigital.pages.dev/" target="_blank" rel="noopener noreferrer" class="palex-credit">Developed By paléXdigital</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE MODAL: CATEGORY DETAILS -->
+  <div class="modal-backdrop" id="category-modal" role="dialog" aria-modal="true" aria-labelledby="cat-modal-title" hidden>
+    <div class="modal-box">
+      <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
+      <p class="modal-eyebrow" id="cat-modal-eyebrow">COLLECTION DETAILS</p>
+      <h2 class="modal-title" id="cat-modal-title">WEDDINGS</h2>
+      <p class="modal-desc" id="cat-modal-desc"></p>
+      <div class="modal-highlights" id="cat-modal-highlights"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-connect" id="cat-modal-inquire">INQUIRE FOR THIS COLLECTION</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE MODAL: LET'S CONNECT / INQUIRY FORM -->
+  <div class="modal-backdrop" id="connect-modal" role="dialog" aria-modal="true" aria-labelledby="connect-modal-title" hidden>
+    <div class="modal-box">
+      <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
+      <p class="modal-eyebrow">GET IN TOUCH</p>
+      <h2 class="modal-title" id="connect-modal-title">LET'S CONNECT</h2>
+      <p class="modal-desc">Tell me about your story, your vision, and the moments you want preserved forever.</p>
+
+      <form id="inquiry-form" class="inquiry-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inq-name">YOUR NAMES *</label>
+            <input type="text" id="inq-name" name="name" placeholder="e.g. Elena &amp; Marcus" required>
+          </div>
+          <div class="form-group">
+            <label for="inq-email">EMAIL ADDRESS *</label>
+            <input type="email" id="inq-email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inq-date">EVENT DATE</label>
+            <input type="date" id="inq-date" name="date">
+          </div>
+          <div class="form-group">
+            <label for="inq-collection">SESSION / PACKAGE</label>
+            <select id="inq-collection" name="collection">
+              <option value="Weddings - Half Day (6 Hours)">Weddings — Half Day (6 Hours)</option>
+              <option value="Weddings - Full Day (8 Hours)">Weddings — Full Day (8 Hours)</option>
+              <option value="Weddings - Extended Coverage (10 Hours)">Weddings — Extended Coverage (10 Hours)</option>
+              <option value="Elopements">Elopements</option>
+              <option value="Intimate">Intimate</option>
+              <option value="Adventure">Adventure</option>
+              <option value="Lifestyle">Lifestyle</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inq-location">LOCATION / VENUE</label>
+          <input type="text" id="inq-location" name="location" placeholder="Colorado or Destination">
+        </div>
+
+        <div class="form-group">
+          <label for="inq-message">TELL ME ABOUT YOUR VISION *</label>
+          <textarea id="inq-message" name="message" rows="3" placeholder="Share details about your celebration..." required></textarea>
+        </div>
+
+        <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn-connect">SEND INQUIRY</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE MODAL: ABOUT -->
+  <div class="modal-backdrop" id="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-modal-title" hidden>
+    <div class="modal-box">
+      <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
+      <p class="modal-eyebrow">BEHIND THE LENS</p>
+      <h2 class="modal-title" id="about-modal-title">ABOUT KAREN</h2>
+      <p class="modal-desc">
+        Based in Colorado and available worldwide, KINEOIRIS Photography is dedicated to capturing raw emotion, editorial elegance, and unscripted intimacy. My approach blends gentle direction with documentary storytelling—so you feel completely present while every fleeting glance and warm embrace is preserved.
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="btn-connect" data-modal="connect-modal">WORK TOGETHER</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE MODAL: GALLERY PREVIEW -->
+  <div class="modal-backdrop" id="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" hidden>
+    <div class="modal-box modal-box-wide">
+      <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
+      <p class="modal-eyebrow">SELECTED WORKS</p>
+      <h2 class="modal-title" id="gallery-modal-title">PORTFOLIO GALLERY</h2>
+      <div class="gallery-preview-grid">
+        <div class="gallery-thumb"><img src="image02.jpg" alt="Weddings gallery" onerror="this.classList.add('img-missing')"><span>WEDDINGS</span></div>
+        <div class="gallery-thumb"><img src="image03.jpg" alt="Elopements gallery" onerror="this.classList.add('img-missing')"><span>ELOPEMENTS</span></div>
+        <div class="gallery-thumb"><img src="image04.jpg" alt="Intimate gallery" onerror="this.classList.add('img-missing')"><span>INTIMATE</span></div>
+        <div class="gallery-thumb"><img src="image05.jpg" alt="Adventure gallery" onerror="this.classList.add('img-missing')"><span>ADVENTURE</span></div>
+        <div class="gallery-thumb"><img src="image06.jpg" alt="Lifestyle gallery" onerror="this.classList.add('img-missing')"><span>LIFESTYLE</span></div>
+        <div class="gallery-thumb"><img src="image08.jpg" alt="Editorial couple" onerror="this.classList.add('img-missing')"><span>EDITORIAL</span></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-connect" data-modal="connect-modal">BOOK YOUR SESSION</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+/**
+ * KINEOIRIS Photography — Interactive Functionality
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Category Details Data for "LEARN MORE" buttons
+  const categoryData = {
+    weddings: {
+      title: 'WEDDINGS',
+      eyebrow: 'COLLECTION 01',
+      description:
+        'Full-story coverage crafted for couples celebrating with family and friends. From quiet morning preparations to candlelit toasts and high-energy dance floors, every moment is documented with timeless artistry.',
+      highlights:
+        'Collections available for 6, 8, or 10 hours • Complimentary Colorado engagement session • Timeline planning assistance • High-resolution online gallery'
+    },
+    elopements: {
+      title: 'ELOPEMENTS',
+      eyebrow: 'COLLECTION 02',
+      description:
+        'Intimate, intentional celebrations set against Colorado mountain peaks, alpine lakes, or sweeping desert landscapes. Designed for couples prioritizing meaningful experiences over traditional timelines.',
+      highlights:
+        'Starting at $2,200 (4 hours) • Location scouting & permit guidance • Custom adventure timeline • Full print rights & 48-hour sneak peeks'
+    },
+    intimate: {
+      title: 'INTIMATE',
+      eyebrow: 'COLLECTION 03',
+      description:
+        'Editorial boudoir and sensual couples portraiture captured in natural light. Celebratory, empowering sessions tailored to honor connection, confidence, and vulnerability.',
+      highlights:
+        'Starting at $850 • Studio or private indoor/outdoor setting • Guided posing & styling guide • Private password-protected gallery'
+    },
+    adventure: {
+      title: 'ADVENTURE',
+      eyebrow: 'COLLECTION 04',
+      description:
+        'Sunrise hikes, coastal cliffs, and windswept engagement or anniversary sessions for couples who feel most alive outdoors.',
+      highlights:
+        'Starting at $950 • Up to 2 scenic locations • Outfit change guidance • High-resolution downloadable gallery'
+    },
+    lifestyle: {
+      title: 'LIFESTYLE',
+      eyebrow: 'COLLECTION 05',
+      description:
+        'Warm, documentary motherhood, newborn, and family sessions focused on genuine connection, gentle movement, and quiet everyday magic.',
+      highlights:
+        'Starting at $750 • In-home or golden-hour outdoor session • Relaxed pace for little ones • Full gallery of edited high-resolution images'
+    }
+  };
+
+  // 2. Wedding Packages Accordion Behavior
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  accordionHeaders.forEach((header) => {
+    header.addEventListener('click', () => {
+      const isExpanded = header.getAttribute('aria-expanded') === 'true';
+      const panel = header.nextElementSibling;
+
+      // Close other open panels for clean editorial presentation
+      accordionHeaders.forEach((otherHeader) => {
+        if (otherHeader !== header) {
+          otherHeader.setAttribute('aria-expanded', 'false');
+          if (otherHeader.nextElementSibling) {
+            otherHeader.nextElementSibling.hidden = true;
+          }
+        }
+      });
+
+      header.setAttribute('aria-expanded', String(!isExpanded));
+      if (panel) {
+        panel.hidden = isExpanded;
+      }
+    });
+  });
+
+  // 3. Modal Management
+  const allModals = document.querySelectorAll('.modal-backdrop');
+
+  function openModal(modalId) {
+    allModals.forEach((m) => (m.hidden = true));
+    const target = document.getElementById(modalId);
+    if (target) {
+      target.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeAllModals() {
+    allModals.forEach((m) => (m.hidden = true));
+    document.body.style.overflow = '';
+  }
+
+  // Triggers with data-modal attribute
+  document.querySelectorAll('[data-modal]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const modalId = trigger.getAttribute('data-modal');
+      const presetPackage = trigger.getAttribute('data-package');
+
+      openModal(modalId);
+
+      if (presetPackage && modalId === 'connect-modal') {
+        const selectEl = document.getElementById('inq-collection');
+        if (selectEl) {
+          for (const opt of selectEl.options) {
+            if (opt.value.toLowerCase().includes(presetPackage.toLowerCase())) {
+              selectEl.value = opt.value;
+              break;
+            }
+          }
+        }
+      }
+    });
+  });
+
+  // Category "LEARN MORE" buttons
+  const catModalTitle = document.getElementById('cat-modal-title');
+  const catModalEyebrow = document.getElementById('cat-modal-eyebrow');
+  const catModalDesc = document.getElementById('cat-modal-desc');
+  const catModalHighlights = document.getElementById('cat-modal-highlights');
+  const catModalInquire = document.getElementById('cat-modal-inquire');
+  let activeCategoryName = 'Weddings';
+
+  document.querySelectorAll('.btn-learn-more').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-category');
+      const info = categoryData[key];
+      if (!info) return;
+
+      activeCategoryName = info.title;
+      catModalEyebrow.textContent = info.eyebrow;
+      catModalTitle.textContent = info.title;
+      catModalDesc.textContent = info.description;
+      catModalHighlights.textContent = info.highlights;
+      openModal('category-modal');
+    });
+  });
+
+  if (catModalInquire) {
+    catModalInquire.addEventListener('click', () => {
+      openModal('connect-modal');
+      const selectEl = document.getElementById('inq-collection');
+      if (selectEl) {
+        for (const opt of selectEl.options) {
+          if (opt.value.toLowerCase().includes(activeCategoryName.toLowerCase())) {
+            selectEl.value = opt.value;
+            break;
+          }
+        }
+      }
+    });
+  }
+
+  // Close buttons & backdrop click & Escape key
+  document.querySelectorAll('.modal-close').forEach((btn) => {
+    btn.addEventListener('click', closeAllModals);
+  });
+
+  allModals.forEach((backdrop) => {
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) {
+        closeAllModals();
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAllModals();
+    }
+  });
+
+  // 4. Inquiry Form Validation & Submission Feedback
+  const inquiryForm = document.getElementById('inquiry-form');
+  const formFeedback = document.getElementById('form-feedback');
+
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('inq-name').value.trim();
+      const email = document.getElementById('inq-email').value.trim();
+      const message = document.getElementById('inq-message').value.trim();
+
+      if (!name || !email || !message) {
+        formFeedback.textContent = 'Please complete your name, email address, and vision details.';
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        formFeedback.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      formFeedback.textContent = `Thank you, ${name}. Your inquiry has been received—Karen will respond within 24–48 hours.`;
+      inquiryForm.reset();
+    });
+  }
+});
+
+  </script>
+</body>
+</html>
