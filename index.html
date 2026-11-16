@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KINEOIRIS Photography — Packages &amp; Investment</title>
+  <title>JOSED CONCEPT — Photography &amp; Video Productions</title>
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   <style>
 /* ==========================================================================
-   KINEOIRIS PHOTOGRAPHY — EXACT DESIGN SYSTEM
+   JOSED CONCEPT — EXACT DESIGN SYSTEM
    ========================================================================== */
 
 :root {
@@ -840,6 +841,29 @@ button {
   text-align: center;
 }
 
+/* Contact Info Styling inside About Modal */
+.contact-details-box {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(232, 226, 213, 0.15);
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+
+.contact-details-box p {
+  margin-bottom: 6px;
+}
+
+.contact-details-box a {
+  color: var(--text-white);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.contact-details-box a:hover {
+  color: var(--btn-tan-hover);
+}
+
 /* ==========================================================================
    7. PROPORTIONAL RESPONSIVE SCALING (PRESERVING VISUAL IDENTITY)
    ========================================================================== */
@@ -1013,7 +1037,7 @@ button {
   <!-- HERO & NAVIGATION SECTION -->
   <header class="hero-section" id="top">
     <div class="hero-bg-wrapper">
-      <img src="image01.jpg" alt="Moody editorial wedding photography in warm sunlight" class="hero-bg-img" onerror="this.classList.add('img-missing')">
+      <img src="hero.jpg" alt="Josed Concept photography and video production in action" class="hero-bg-img" onerror="this.classList.add('img-missing')">
       <div class="hero-overlay"></div>
     </div>
 
@@ -1024,11 +1048,11 @@ button {
         <a href="#gallery-modal" class="nav-link" data-modal="gallery-modal">GALLERY</a>
       </div>
 
-      <a href="#top" class="brand-logo-link" aria-label="KINEOIRIS Photography Home">
-        <img src="logo.jpg" alt="KINEOIRIS Photography Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <a href="#top" class="brand-logo-link" aria-label="Josed Concept Home">
+        <img src="logo.png" alt="Josed Concept Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="brand-wordmark" style="display: none;">
-          <span class="wordmark-main">KINEOIRIS</span>
-          <span class="wordmark-sub">PHOTOGRAPHY</span>
+          <span class="wordmark-main">JOSED CONCEPT</span>
+          <span class="wordmark-sub">PHOTOGRAPHY &amp; VIDEO</span>
         </div>
       </a>
 
@@ -1051,11 +1075,11 @@ button {
   </header>
 
   <!-- 5-COLUMN CATEGORY STRIP -->
-  <section class="categories-section" id="categories" aria-label="Photography Categories">
+  <section class="categories-section" id="categories" aria-label="Photography and Video Categories">
     <div class="categories-container">
       <article class="category-card">
         <div class="category-img-box">
-          <img src="image02.jpg" alt="Weddings photography" class="category-img" onerror="this.classList.add('img-missing')">
+          <img src="image02.jpg" alt="Weddings photography by Josed Concept" class="category-img" onerror="this.classList.add('img-missing')">
         </div>
         <h2 class="category-title">WEDDINGS</h2>
         <button type="button" class="btn-learn-more" data-category="weddings">LEARN MORE</button>
@@ -1063,7 +1087,7 @@ button {
 
       <article class="category-card">
         <div class="category-img-box">
-          <img src="image03.jpg" alt="Elopements photography" class="category-img" onerror="this.classList.add('img-missing')">
+          <img src="image03.jpg" alt="Lobola weddings & special events" class="category-img" onerror="this.classList.add('img-missing')">
         </div>
         <h2 class="category-title">ELOPEMENTS</h2>
         <button type="button" class="btn-learn-more" data-category="elopements">LEARN MORE</button>
@@ -1071,7 +1095,7 @@ button {
 
       <article class="category-card">
         <div class="category-img-box">
-          <img src="image04.jpg" alt="Intimate photography" class="category-img" onerror="this.classList.add('img-missing')">
+          <img src="image04.jpg" alt="Intimate and party photography" class="category-img" onerror="this.classList.add('img-missing')">
         </div>
         <h2 class="category-title">INTIMATE</h2>
         <button type="button" class="btn-learn-more" data-category="intimate">LEARN MORE</button>
@@ -1079,7 +1103,7 @@ button {
 
       <article class="category-card">
         <div class="category-img-box">
-          <img src="image05.jpg" alt="Adventure photography" class="category-img" onerror="this.classList.add('img-missing')">
+          <img src="image05.jpg" alt="Business launch and events video production" class="category-img" onerror="this.classList.add('img-missing')">
         </div>
         <h2 class="category-title">ADVENTURE</h2>
         <button type="button" class="btn-learn-more" data-category="adventure">LEARN MORE</button>
@@ -1087,7 +1111,7 @@ button {
 
       <article class="category-card">
         <div class="category-img-box">
-          <img src="image06.jpg" alt="Lifestyle photography" class="category-img" onerror="this.classList.add('img-missing')">
+          <img src="image06.jpg" alt="Modelings and lifestyle productions" class="category-img" onerror="this.classList.add('img-missing')">
         </div>
         <h2 class="category-title">LIFESTYLE</h2>
         <button type="button" class="btn-learn-more" data-category="lifestyle">LEARN MORE</button>
@@ -1098,7 +1122,7 @@ button {
   <!-- FULL-BLEED TESTIMONIAL BANNER -->
   <section class="testimonial-section" aria-label="Client Testimonial">
     <div class="testimonial-bg-wrapper">
-      <img src="image07.jpg" alt="Close-up romantic couple portrait" class="testimonial-bg-img" onerror="this.classList.add('img-missing')">
+      <img src="image07.jpg" alt="Close-up romantic client portrait" class="testimonial-bg-img" onerror="this.classList.add('img-missing')">
       <div class="testimonial-overlay"></div>
     </div>
 
@@ -1108,7 +1132,7 @@ button {
           <span class="quote-mark quote-open">&ldquo;</span>MEMORABLE MOMENTS<span class="quote-mark quote-close">&rdquo;</span>
         </h2>
         <p class="testimonial-body">
-          Karen literally makes you feel like she is a great friend that came to shoot one of your most special days. People asked me multiple times after our wedding how long we have known the gal that did our photography, because she was so personable and friendly. She truly was invested and part of our day, not just someone shooting from the sidelines. Thank you for shooting our most memorable moments.
+          Josed Concept makes you feel like you are working with true professionals who care deeply about your special event. People asked us multiple times after our celebration who did our photography and video production because the quality was phenomenal. They truly invested themselves in our day. Thank you, Josed Concept, for preserving our most memorable moments.
         </p>
       </blockquote>
     </div>
@@ -1120,33 +1144,33 @@ button {
       <!-- Left Portrait Image -->
       <div class="packages-image-col">
         <div class="packages-portrait-frame">
-          <img src="image08.jpg" alt="Editorial bride and groom portrait" class="packages-portrait-img" onerror="this.classList.add('img-missing')">
+          <img src="image08.jpg" alt="Editorial couple portrait by Josed Concept" class="packages-portrait-img" onerror="this.classList.add('img-missing')">
         </div>
       </div>
 
       <!-- Right Package Details & Accordions -->
       <div class="packages-details-col">
         <h2 class="packages-heading" id="wedding-packages-heading">
-          <span>WEDDING</span>
+          <span>EVENT</span>
           <span>PACKAGES</span>
         </h2>
 
         <p class="packages-description">
-          No matter how you envision your wedding day or how much coverage you require, I have packages to capture every moment, from getting ready to the dance floor celebrations. You can relax knowing that every special moment will be beautifully captured for you to relive over and over.
+          No matter how you envision your wedding day, birthday party, lobola wedding, or business launch, Josed Concept has packages to capture every moment with high standard photography equipment that produces the best quality memories for your events.
         </p>
 
         <p class="packages-description">
-          Getting married outside of Colorado? I'm always up for an adventure! Reach out to learn about my destination wedding packages and travel fees!
+          Our services are unique, timely, affordable and reliable. Try us...stay with us forever! Reach out to learn more about our complete video and photo production packages.
         </p>
 
         <div class="whats-included-block">
           <h3 class="included-label">WHATS INCLUDED?</h3>
           <p class="included-text">
-            Optional engagement session, getting ready photos, full ceremony, family photos, reception photos, sunset couples photos
+            Optional engagement session, getting ready photos, full ceremony coverage, family photos, reception coverage, sunset couples photos &amp; high quality video production
           </p>
         </div>
 
-        <div class="accordion-list" role="region" aria-label="Wedding Package Tiers">
+        <div class="accordion-list" role="region" aria-label="Event Package Tiers">
           <!-- Accordion Item 1 -->
           <div class="accordion-item">
             <button type="button" class="accordion-header" aria-expanded="false">
@@ -1161,11 +1185,11 @@ button {
               <div class="accordion-panel-inner">
                 <p class="pkg-price">Starting at $2,800</p>
                 <ul class="pkg-features">
-                  <li>Up to 6 consecutive hours of wedding day coverage</li>
-                  <li>Complimentary 1-hour Colorado engagement session</li>
-                  <li>Custom timeline consultation &amp; vendor coordination</li>
+                  <li>Up to 6 consecutive hours of photography &amp; video coverage</li>
+                  <li>High standard equipment for pristine event memory preservation</li>
+                  <li>Custom timeline consultation &amp; professional coordination</li>
                   <li>High-resolution edited online gallery with full print release</li>
-                  <li>Sneak peek gallery delivered within 72 hours</li>
+                  <li>Timely and reliable digital delivery</li>
                 </ul>
                 <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Half Day (6 Hours)">INQUIRE ABOUT HALF DAY</button>
               </div>
@@ -1187,10 +1211,10 @@ button {
                 <p class="pkg-price">Starting at $3,600</p>
                 <ul class="pkg-features">
                   <li>Up to 8 consecutive hours from prep through reception</li>
-                  <li>Complimentary 90-minute engagement session</li>
-                  <li>Second photographer included for multi-angle coverage</li>
+                  <li>Special event coverage (Weddings, Lobola, Business Launch)</li>
+                  <li>Multi-angle high definition video &amp; photo production</li>
                   <li>High-resolution edited online gallery with full print release</li>
-                  <li>Sneak peek gallery delivered within 48 hours</li>
+                  <li>Dedicated professional production team</li>
                 </ul>
                 <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Full Day (8 Hours)">INQUIRE ABOUT FULL DAY</button>
               </div>
@@ -1212,10 +1236,10 @@ button {
                 <p class="pkg-price">Starting at $4,400</p>
                 <ul class="pkg-features">
                   <li>Up to 10 consecutive hours including grand exit coverage</li>
-                  <li>Complimentary engagement session + bridal portrait session</li>
-                  <li>Second photographer included all day</li>
-                  <li>Custom heirloom linen-bound photo album credit ($300 value)</li>
-                  <li>Full online gallery with print rights &amp; 48-hour sneak peeks</li>
+                  <li>Comprehensive photo &amp; video production for major celebrations</li>
+                  <li>Full production crew with high standard gear</li>
+                  <li>Custom heirloom album credit &amp; cinematic highlight video</li>
+                  <li>Full online gallery with complete print and streaming rights</li>
                 </ul>
                 <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Extended Coverage (10 Hours)">INQUIRE ABOUT EXTENDED</button>
               </div>
@@ -1232,11 +1256,11 @@ button {
       <div class="footer-nav-row">
         <a href="#about-modal" data-modal="about-modal">ABOUT</a>
         <a href="#categories">COLLECTIONS</a>
-        <a href="#packages">WEDDINGS</a>
+        <a href="#packages">PACKAGES</a>
         <a href="#gallery-modal" data-modal="gallery-modal">GALLERY</a>
         <a href="#connect-modal" data-modal="connect-modal">LET'S CONNECT</a>
       </div>
-      <p class="footer-tagline">KINEOIRIS PHOTOGRAPHY &bull; COLORADO &amp; WORLDWIDE</p>
+      <p class="footer-tagline">JOSED CONCEPT &bull; PHOTOGRAPHY &amp; VIDEO PRODUCTIONS &bull; ZAF</p>
       <div class="footer-credit-bar">
         <a href="https://palexdigital.pages.dev/" target="_blank" rel="noopener noreferrer" class="palex-credit">Developed By paléXdigital</a>
       </div>
@@ -1247,12 +1271,12 @@ button {
   <div class="modal-backdrop" id="category-modal" role="dialog" aria-modal="true" aria-labelledby="cat-modal-title" hidden>
     <div class="modal-box">
       <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
-      <p class="modal-eyebrow" id="cat-modal-eyebrow">COLLECTION DETAILS</p>
+      <p class="modal-eyebrow" id="cat-modal-eyebrow">PRODUCTION SERVICE</p>
       <h2 class="modal-title" id="cat-modal-title">WEDDINGS</h2>
       <p class="modal-desc" id="cat-modal-desc"></p>
       <div class="modal-highlights" id="cat-modal-highlights"></div>
       <div class="modal-actions">
-        <button type="button" class="btn-connect" id="cat-modal-inquire">INQUIRE FOR THIS COLLECTION</button>
+        <button type="button" class="btn-connect" id="cat-modal-inquire">INQUIRE FOR THIS SERVICE</button>
       </div>
     </div>
   </div>
@@ -1263,7 +1287,7 @@ button {
       <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
       <p class="modal-eyebrow">GET IN TOUCH</p>
       <h2 class="modal-title" id="connect-modal-title">LET'S CONNECT</h2>
-      <p class="modal-desc">Tell me about your story, your vision, and the moments you want preserved forever.</p>
+      <p class="modal-desc">Contact Josed Concept for your photography and video production needs.</p>
 
       <form id="inquiry-form" class="inquiry-form" novalidate>
         <div class="form-row">
@@ -1273,7 +1297,7 @@ button {
           </div>
           <div class="form-group">
             <label for="inq-email">EMAIL ADDRESS *</label>
-            <input type="email" id="inq-email" name="email" placeholder="you@example.com" required>
+            <input type="email" id="inq-email" name="email" placeholder="Adedayoj11@gmail.com" required>
           </div>
         </div>
 
@@ -1285,25 +1309,23 @@ button {
           <div class="form-group">
             <label for="inq-collection">SESSION / PACKAGE</label>
             <select id="inq-collection" name="collection">
-              <option value="Weddings - Half Day (6 Hours)">Weddings — Half Day (6 Hours)</option>
-              <option value="Weddings - Full Day (8 Hours)">Weddings — Full Day (8 Hours)</option>
-              <option value="Weddings - Extended Coverage (10 Hours)">Weddings — Extended Coverage (10 Hours)</option>
-              <option value="Elopements">Elopements</option>
-              <option value="Intimate">Intimate</option>
-              <option value="Adventure">Adventure</option>
-              <option value="Lifestyle">Lifestyle</option>
+              <option value="Weddings - Half Day (6 Hours)">Half Day (6 Hours)</option>
+              <option value="Weddings - Full Day (8 Hours)">Full Day (8 Hours)</option>
+              <option value="Weddings - Extended Coverage (10 Hours)">Extended Coverage (10 Hours)</option>
+              <option value="Special Events (Birthday Parties, Lobola, Business Launch)">Special Events</option>
+              <option value="Modelings">Modelings</option>
             </select>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="inq-location">LOCATION / VENUE</label>
-          <input type="text" id="inq-location" name="location" placeholder="Colorado or Destination">
+          <label for="inq-location">LOCATION / VENUE (ZAF)</label>
+          <input type="text" id="inq-location" name="location" placeholder="South Africa">
         </div>
 
         <div class="form-group">
           <label for="inq-message">TELL ME ABOUT YOUR VISION *</label>
-          <textarea id="inq-message" name="message" rows="3" placeholder="Share details about your celebration..." required></textarea>
+          <textarea id="inq-message" name="message" rows="3" placeholder="Share details about your special event..." required></textarea>
         </div>
 
         <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
@@ -1319,12 +1341,20 @@ button {
   <div class="modal-backdrop" id="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-modal-title" hidden>
     <div class="modal-box">
       <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
-      <p class="modal-eyebrow">BEHIND THE LENS</p>
-      <h2 class="modal-title" id="about-modal-title">ABOUT KAREN</h2>
+      <p class="modal-eyebrow">ABOUT JOSED CONCEPT</p>
+      <h2 class="modal-title" id="about-modal-title">JOSED CONCEPT</h2>
       <p class="modal-desc">
-        Based in Colorado and available worldwide, KINEOIRIS Photography is dedicated to capturing raw emotion, editorial elegance, and unscripted intimacy. My approach blends gentle direction with documentary storytelling—so you feel completely present while every fleeting glance and warm embrace is preserved.
+        Josed Concept is a business of photography &amp; Video productions. We cover special events like Birthday Parties, Lobola weddings, Business launch, Modelings &amp; lots more. We have high standard photography equipment that produces the best quality memories for your events. Our services are unique, timely, affordable and reliable. Our motto is try us...stay with us forever
       </p>
-      <div class="modal-actions">
+      
+      <div class="contact-details-box">
+        <p><strong>Business Name:</strong> Josed Concept</p>
+        <p><strong>Email:</strong> <a href="mailto:Adedayoj11@gmail.com">Adedayoj11@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+270695482416">+27 0695482416</a></p>
+        <p><strong>Country Code:</strong> ZAF</p>
+      </div>
+
+      <div class="modal-actions" style="margin-top: 18px;">
         <button type="button" class="btn-connect" data-modal="connect-modal">WORK TOGETHER</button>
       </div>
     </div>
@@ -1334,15 +1364,15 @@ button {
   <div class="modal-backdrop" id="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" hidden>
     <div class="modal-box modal-box-wide">
       <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
-      <p class="modal-eyebrow">SELECTED WORKS</p>
-      <h2 class="modal-title" id="gallery-modal-title">PORTFOLIO GALLERY</h2>
+      <p class="modal-eyebrow">SELECTED PRODUCTIONS</p>
+      <h2 class="modal-title" id="gallery-modal-title">PRODUCTION GALLERY</h2>
       <div class="gallery-preview-grid">
-        <div class="gallery-thumb"><img src="image02.jpg" alt="Weddings gallery" onerror="this.classList.add('img-missing')"><span>WEDDINGS</span></div>
-        <div class="gallery-thumb"><img src="image03.jpg" alt="Elopements gallery" onerror="this.classList.add('img-missing')"><span>ELOPEMENTS</span></div>
-        <div class="gallery-thumb"><img src="image04.jpg" alt="Intimate gallery" onerror="this.classList.add('img-missing')"><span>INTIMATE</span></div>
-        <div class="gallery-thumb"><img src="image05.jpg" alt="Adventure gallery" onerror="this.classList.add('img-missing')"><span>ADVENTURE</span></div>
-        <div class="gallery-thumb"><img src="image06.jpg" alt="Lifestyle gallery" onerror="this.classList.add('img-missing')"><span>LIFESTYLE</span></div>
-        <div class="gallery-thumb"><img src="image08.jpg" alt="Editorial couple" onerror="this.classList.add('img-missing')"><span>EDITORIAL</span></div>
+        <div class="gallery-thumb"><img src="image02.jpg" alt="Weddings" onerror="this.classList.add('img-missing')"><span>WEDDINGS</span></div>
+        <div class="gallery-thumb"><img src="image03.jpg" alt="Lobola Weddings" onerror="this.classList.add('img-missing')"><span>LOBOLA</span></div>
+        <div class="gallery-thumb"><img src="image04.jpg" alt="Birthday Parties" onerror="this.classList.add('img-missing')"><span>PARTIES</span></div>
+        <div class="gallery-thumb"><img src="image05.jpg" alt="Business Launch" onerror="this.classList.add('img-missing')"><span>LAUNCH</span></div>
+        <div class="gallery-thumb"><img src="image06.jpg" alt="Modelings" onerror="this.classList.add('img-missing')"><span>MODELINGS</span></div>
+        <div class="gallery-thumb"><img src="image08.jpg" alt="Editorial Production" onerror="this.classList.add('img-missing')"><span>PRODUCTION</span></div>
       </div>
       <div class="modal-actions">
         <button type="button" class="btn-connect" data-modal="connect-modal">BOOK YOUR SESSION</button>
@@ -1352,7 +1382,7 @@ button {
 
   <script>
 /**
- * KINEOIRIS Photography — Interactive Functionality
+ * JOSED CONCEPT — Interactive Functionality
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1360,43 +1390,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryData = {
     weddings: {
       title: 'WEDDINGS',
-      eyebrow: 'COLLECTION 01',
+      eyebrow: 'PRODUCTION 01',
       description:
-        'Full-story coverage crafted for couples celebrating with family and friends. From quiet morning preparations to candlelit toasts and high-energy dance floors, every moment is documented with timeless artistry.',
+        'Full-story coverage crafted for couples celebrating with family and friends. From quiet morning preparations to candlelit toasts and high-energy dance floors, every moment is documented with high standard equipment producing top quality memories.',
       highlights:
-        'Collections available for 6, 8, or 10 hours • Complimentary Colorado engagement session • Timeline planning assistance • High-resolution online gallery'
+        'Collections available for 6, 8, or 10 hours • High standard photography & video equipment • Unique, timely, & reliable service • Full high-resolution online gallery'
     },
     elopements: {
-      title: 'ELOPEMENTS',
-      eyebrow: 'COLLECTION 02',
+      title: 'LOBOLA WEDDINGS',
+      eyebrow: 'PRODUCTION 02',
       description:
-        'Intimate, intentional celebrations set against Colorado mountain peaks, alpine lakes, or sweeping desert landscapes. Designed for couples prioritizing meaningful experiences over traditional timelines.',
+        'Special cultural celebrations and traditional weddings captured with utmost respect, beauty, and professional clarity. We preserve your cherished traditions with unique and timely videography and photography.',
       highlights:
-        'Starting at $2,200 (4 hours) • Location scouting & permit guidance • Custom adventure timeline • Full print rights & 48-hour sneak peeks'
+        'Special event coverage • Professional lighting & audio equipment • Custom highlight reels • Full print and digital rights'
     },
     intimate: {
-      title: 'INTIMATE',
-      eyebrow: 'COLLECTION 03',
+      title: 'BIRTHDAY PARTIES',
+      eyebrow: 'PRODUCTION 03',
       description:
-        'Editorial boudoir and sensual couples portraiture captured in natural light. Celebratory, empowering sessions tailored to honor connection, confidence, and vulnerability.',
+        'Vibrant and lively coverage of birthday parties and celebrations. We capture every candid laugh, joyful dance, and memorable milestone with affordable and reliable expertise.',
       highlights:
-        'Starting at $850 • Studio or private indoor/outdoor setting • Guided posing & styling guide • Private password-protected gallery'
+        'Event coverage starting at hourly or package rates • Fast turnaround times • High quality memory creation • Professional editing'
     },
     adventure: {
-      title: 'ADVENTURE',
-      eyebrow: 'COLLECTION 04',
+      title: 'BUSINESS LAUNCH',
+      eyebrow: 'PRODUCTION 04',
       description:
-        'Sunrise hikes, coastal cliffs, and windswept engagement or anniversary sessions for couples who feel most alive outdoors.',
+        'Professional video productions and corporate photography for business launches, grand openings, and corporate milestones. Elevate your brand with our top-tier equipment and reliable service.',
       highlights:
-        'Starting at $950 • Up to 2 scenic locations • Outfit change guidance • High-resolution downloadable gallery'
+        'Corporate & commercial rates • High definition video production • Promotional teaser delivery • Experienced commercial crew'
     },
     lifestyle: {
-      title: 'LIFESTYLE',
-      eyebrow: 'COLLECTION 05',
+      title: 'MODELINGS & MORE',
+      eyebrow: 'PRODUCTION 05',
       description:
-        'Warm, documentary motherhood, newborn, and family sessions focused on genuine connection, gentle movement, and quiet everyday magic.',
+        'Portfolio shoots, fashion modelings, and creative portrait sessions designed to highlight your unique aesthetic and presence through crisp, high-standard production quality.',
       highlights:
-        'Starting at $750 • In-home or golden-hour outdoor session • Relaxed pace for little ones • Full gallery of edited high-resolution images'
+        'Studio or location sessions • Professional styling guidance • High-resolution retouched deliverables • Try us...stay with us forever'
     }
   };
 
@@ -1542,7 +1572,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      formFeedback.textContent = `Thank you, ${name}. Your inquiry has been received—Karen will respond within 24–48 hours.`;
+      formFeedback.textContent = `Thank you, ${name}. Your inquiry has been received—Josed Concept will respond shortly. Contact us at Adedayoj11@gmail.com or +27 0695482416.`;
       inquiryForm.reset();
     });
   }
