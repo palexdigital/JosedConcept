@@ -4,25 +4,27 @@
   <link rel="icon" href="logo.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JOSED CONCEPT — Photography &amp; Video Productions</title>
+  <title>JOSED CONCEPT — Photography &amp; Videography</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   <style>
 /* ==========================================================================
-   JOSED CONCEPT CONCEPT — EXACT DESIGN SYSTEM
+   JOSED CONCEPT — REFINED PORTFOLIO DESIGN SYSTEM
    ========================================================================== */
 
 :root {
-  --bg-dark: #121212;
-  --bg-olive: #383521;
-  --bg-olive-deep: #2d2a1a;
-  --btn-tan: #7d735c;
-  --btn-tan-hover: #91866d;
+  --bg-dark: #111110;
+  --bg-charcoal: #181714;
+  --bg-olive: #2f2c1c;
+  --bg-olive-deep: #242114;
+  --btn-tan: #8a7e63;
+  --btn-tan-hover: #a19476;
+  --gold-accent: #c5b48e;
   --text-cream: #e8e2d5;
-  --text-white: #f4f1ea;
-  --text-muted: #c2bba9;
-  --border-subtle: rgba(232, 226, 213, 0.35);
+  --text-white: #f7f4ed;
+  --text-muted: #b5ae9d;
+  --border-subtle: rgba(232, 226, 213, 0.22);
 
   --font-display: 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
@@ -48,7 +50,7 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-dark);
   color: var(--text-cream);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -58,7 +60,7 @@ img {
   max-width: 100%;
 }
 
-/* Neutral clean blank placeholder when local image files are not yet added */
+/* Fallback subtle dark surface if local image asset is unavailable */
 img.img-missing {
   opacity: 0;
 }
@@ -76,6 +78,75 @@ button {
   color: inherit;
 }
 
+/* Shared Section Typography */
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.2vw, 2.55rem);
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
+  color: var(--text-white);
+  text-transform: uppercase;
+}
+
+/* Primary Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--btn-tan);
+  color: var(--text-white);
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border: 1px solid rgba(247, 244, 237, 0.15);
+  transition: background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-tan-hover);
+  border-color: rgba(247, 244, 237, 0.38);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--text-cream);
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.25s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--btn-tan);
+  border-color: var(--btn-tan);
+  color: var(--text-white);
+}
+
 /* ==========================================================================
    1. HERO & NAVIGATION HEADER
    ========================================================================== */
@@ -83,13 +154,12 @@ button {
 .hero-section {
   position: relative;
   width: 100%;
-  min-height: 540px;
-  height: 62vh;
-  max-height: 760px;
+  min-height: 86vh;
+  max-height: 920px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #241e18;
+  background-color: #1c1814;
   overflow: hidden;
 }
 
@@ -97,7 +167,7 @@ button {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-color: #2a231c;
+  background-color: #211c17;
 }
 
 .hero-bg-img {
@@ -105,6 +175,12 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
+  transform: scale(1.02);
+  transition: transform 8s ease-out;
+}
+
+.hero-section:hover .hero-bg-img {
+  transform: scale(1.05);
 }
 
 .hero-overlay {
@@ -112,20 +188,20 @@ button {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(24, 20, 16, 0.42) 0%,
-    rgba(24, 20, 16, 0.34) 55%,
-    rgba(18, 18, 18, 0.55) 100%
+    rgba(17, 16, 14, 0.55) 0%,
+    rgba(17, 16, 14, 0.42) 50%,
+    rgba(17, 17, 16, 0.88) 100%
   );
 }
 
 /* Top Navigation Bar */
 .main-nav {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 24px 36px;
+  padding: 26px 40px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -144,19 +220,19 @@ button {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text-white);
-  opacity: 0.88;
-  transition: opacity 0.2s ease;
-  padding-bottom: 3px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  padding-bottom: 4px;
   border-bottom: 1px solid transparent;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
   opacity: 1;
-  border-bottom-color: rgba(244, 241, 234, 0.65);
+  color: var(--gold-accent);
+  border-bottom-color: var(--gold-accent);
 }
 
-/* Center Logo */
+/* Center Brand Identity */
 .brand-logo-link {
   display: flex;
   flex-direction: column;
@@ -166,7 +242,7 @@ button {
 }
 
 .brand-logo-img {
-  max-height: 44px;
+  max-height: 48px;
   width: auto;
   object-fit: contain;
 }
@@ -180,7 +256,7 @@ button {
 
 .wordmark-main {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   color: var(--text-white);
@@ -188,71 +264,86 @@ button {
 
 .wordmark-sub {
   font-family: var(--font-sans);
-  font-size: 0.5rem;
+  font-size: 0.52rem;
   font-weight: 300;
-  letter-spacing: 0.36em;
-  color: var(--text-cream);
-  margin-top: 3px;
+  letter-spacing: 0.34em;
+  color: var(--gold-accent);
+  margin-top: 4px;
 }
 
-/* Right CTA Button */
+/* Right Navigation Actions */
 .nav-right {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+  gap: 24px;
 }
 
-.btn-connect {
-  background-color: var(--btn-tan);
-  color: var(--text-white);
-  font-family: var(--font-sans);
-  font-size: 0.62rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 10px 22px;
-  border-radius: 0;
-  transition: background-color 0.2s ease;
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  z-index: 30;
 }
 
-.btn-connect:hover {
-  background-color: var(--btn-tan-hover);
+.mobile-menu-btn span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--text-white);
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Center Hero Heading */
+/* Hero Center Content */
 .hero-center-content {
   position: relative;
-  z-index: 5;
+  z-index: 10;
+  max-width: 880px;
+  margin: auto;
+  padding: 40px 24px 30px;
   text-align: center;
-  margin: auto 0;
-  padding: 0 20px 28px;
 }
 
-.hero-eyebrow {
+.hero-brand-tag {
   font-family: var(--font-sans);
   font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.26em;
+  font-weight: 500;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--text-cream);
-  margin-bottom: 8px;
+  color: var(--gold-accent);
+  margin-bottom: 16px;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+  font-size: clamp(2rem, 4.5vw, 3.65rem);
   font-weight: 400;
-  letter-spacing: 0.12em;
-  line-height: 1.1;
+  letter-spacing: 0.1em;
+  line-height: 1.18;
   color: var(--text-white);
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-/* Bottom Concave/Convex Transition Curve */
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.84rem, 1.3vw, 0.98rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-cream);
+  max-width: 620px;
+  margin: 0 auto 32px;
+}
+
+/* Bottom Curve Transition */
 .hero-curve-bottom {
   position: relative;
-  z-index: 5;
+  z-index: 10;
   width: 100%;
-  height: 46px;
+  height: 44px;
   line-height: 0;
   margin-bottom: -1px;
 }
@@ -264,362 +355,456 @@ button {
 }
 
 /* ==========================================================================
-   2. FIVE-COLUMN CATEGORY STRIP
+   2. OUR SERVICES (FIVE-COLUMN VISUAL SHOWCASE)
    ========================================================================== */
 
-.categories-section {
+.services-section {
   background-color: var(--bg-dark);
-  padding: 58px 36px 84px;
+  padding: 76px 36px 96px;
 }
 
-.categories-container {
-  max-width: 1120px;
+.section-header-center {
+  max-width: 720px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.services-grid {
+  max-width: 1320px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+  gap: 22px;
 }
 
-.category-card {
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-charcoal);
+  border: 1px solid rgba(232, 226, 213, 0.08);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: rgba(197, 180, 142, 0.4);
+  transform: translateY(-4px);
+}
+
+.service-img-box {
+  width: 100%;
+  aspect-ratio: 3 / 4.2;
+  background-color: #1f1e1b;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+
+.service-body {
+  padding: 22px 18px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
-.category-img-box {
-  width: 100%;
-  aspect-ratio: 3 / 4.2;
-  background-color: #1e1e1e;
-  overflow: hidden;
-  margin-bottom: 18px;
-}
-
-.category-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.category-card:hover .category-img {
-  transform: scale(1.03);
-}
-
-.category-title {
+.service-title {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+  font-size: 1.18rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-cream);
-  margin-bottom: 11px;
-}
-
-.btn-learn-more {
-  background-color: var(--btn-tan);
   color: var(--text-white);
-  font-family: var(--font-sans);
-  font-size: 0.55rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 7px 16px;
-  border-radius: 0;
-  transition: background-color 0.2s ease;
+  margin-bottom: 10px;
 }
 
-.btn-learn-more:hover {
-  background-color: var(--btn-tan-hover);
+.service-desc {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.68;
+  color: var(--text-muted);
+  margin-bottom: 20px;
 }
 
 /* ==========================================================================
-   3. FULL-BLEED TESTIMONIAL BANNER
+   3. ABOUT JOSED CONCEPT
    ========================================================================== */
 
-.testimonial-section {
-  position: relative;
+.about-section {
+  background-color: var(--bg-olive);
+  padding: 96px 40px;
+  border-top: 1px solid rgba(232, 226, 213, 0.08);
+  border-bottom: 1px solid rgba(232, 226, 213, 0.08);
+}
+
+.about-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 68px;
+  align-items: center;
+}
+
+.about-image-frame {
   width: 100%;
-  min-height: 360px;
-  padding: 86px 24px;
+  aspect-ratio: 4 / 4.8;
+  background-color: var(--bg-olive-deep);
+  overflow: hidden;
+  border: 1px solid rgba(232, 226, 213, 0.15);
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.about-image-frame:hover .about-img {
+  transform: scale(1.03);
+}
+
+.about-content {
+  color: var(--text-cream);
+}
+
+.about-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.09em;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.about-text {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-cream);
+  margin-bottom: 18px;
+}
+
+.about-motto {
+  margin-top: 28px;
+  padding-left: 18px;
+  border-left: 2px solid var(--gold-accent);
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--text-white);
+  letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   4. OUR WORK / PHOTO GALLERY (SPACIOUS PORTFOLIO SHOWCASE)
+   ========================================================================== */
+
+.gallery-section {
+  background-color: var(--bg-dark);
+  padding: 100px 40px 108px;
+}
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 960px;
+  margin: 0 auto 48px;
+}
+
+.filter-btn {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 10px 18px;
+  border: 1px solid rgba(232, 226, 213, 0.16);
+  background-color: transparent;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--btn-tan);
+  border-color: var(--btn-tan);
+  color: var(--text-white);
+}
+
+/* Editorial Asymmetric Portfolio Grid */
+.portfolio-grid {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-flow: dense;
+  gap: 22px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #1c1b18;
+  cursor: pointer;
+  grid-column: span 4;
+  aspect-ratio: 4 / 4.6;
+}
+
+/* Varied sizes for spacious editorial rhythm */
+.gallery-item.item-wide {
+  grid-column: span 8;
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-item.item-tall {
+  grid-column: span 4;
+  grid-row: span 2;
+  aspect-ratio: auto;
+  min-height: 540px;
+}
+
+.gallery-item.item-half {
+  grid-column: span 6;
+  aspect-ratio: 4 / 3.2;
+}
+
+.gallery-item.hidden-item {
+  display: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14, 13, 11, 0.82) 0%,
+    rgba(14, 13, 11, 0.12) 45%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-cat {
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 4px;
+}
+
+.gallery-item-caption {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-white);
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #211b17;
+  justify-content: space-between;
+}
+
+.zoom-hint {
+  font-family: var(--font-sans);
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-cream);
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   5. WHY CHOOSE JOSED CONCEPT?
+   ========================================================================== */
+
+.pillars-section {
+  background-color: var(--bg-charcoal);
+  padding: 92px 40px;
+  border-top: 1px solid rgba(232, 226, 213, 0.08);
+  border-bottom: 1px solid rgba(232, 226, 213, 0.08);
+}
+
+.pillars-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.pillar-card {
+  padding: 34px 26px;
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(232, 226, 213, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.pillar-card:hover {
+  border-color: rgba(197, 180, 142, 0.42);
+}
+
+.pillar-number {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--gold-accent);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.pillar-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-white);
+  margin-bottom: 12px;
+}
+
+.pillar-desc {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   6. LET'S WORK TOGETHER / CONTACT
+   ========================================================================== */
+
+.contact-section {
+  position: relative;
+  background-color: var(--bg-olive-deep);
+  padding: 104px 32px;
+  text-align: center;
   overflow: hidden;
 }
 
-.testimonial-bg-wrapper {
+.contact-bg-wrapper {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-color: #261f1a;
+  opacity: 0.22;
 }
 
-.testimonial-bg-img {
+.contact-bg-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
 }
 
-.testimonial-overlay {
+.contact-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(20, 16, 13, 0.54);
+  background: radial-gradient(circle at center, rgba(36, 33, 20, 0.72) 0%, rgba(17, 17, 16, 0.94) 100%);
 }
 
-.testimonial-content {
+.contact-content {
   position: relative;
   z-index: 2;
   max-width: 720px;
   margin: 0 auto;
-  text-align: center;
 }
 
-.testimonial-heading {
+.contact-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.45rem, 2.7vw, 2.15rem);
+  font-size: clamp(1.85rem, 3.6vw, 2.85rem);
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
   color: var(--text-white);
   text-transform: uppercase;
   margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
 }
 
-.quote-mark {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  vertical-align: super;
-  opacity: 0.85;
-}
-
-.quote-open {
-  margin-right: 4px;
-}
-
-.quote-close {
-  margin-left: 4px;
-}
-
-.testimonial-body {
+.contact-desc {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 300;
-  line-height: 1.85;
-  letter-spacing: 0.02em;
-  color: var(--text-cream);
-  max-width: 580px;
-  margin: 0 auto;
-}
-
-/* ==========================================================================
-   4. WEDDING PACKAGES & ACCORDION SECTION
-   ========================================================================== */
-
-.packages-section {
-  background-color: var(--bg-olive);
-  padding: 96px 36px 104px;
-}
-
-.packages-container {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-
-/* Left Portrait Frame */
-.packages-image-col {
-  width: 100%;
-}
-
-.packages-portrait-frame {
-  width: 100%;
-  aspect-ratio: 3 / 4.2;
-  background-color: var(--bg-olive-deep);
-  overflow: hidden;
-}
-
-.packages-portrait-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-/* Right Packages Details */
-.packages-details-col {
-  padding-top: 12px;
-  color: var(--text-cream);
-}
-
-.packages-heading {
-  font-family: var(--font-display);
-  font-size: clamp(1.95rem, 3.2vw, 2.65rem);
-  font-weight: 400;
-  line-height: 1.18;
-  letter-spacing: 0.1em;
-  color: var(--text-white);
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
-}
-
-.packages-description {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.88rem;
   font-weight: 300;
   line-height: 1.85;
   color: var(--text-cream);
-  margin-bottom: 18px;
+  margin-bottom: 36px;
 }
 
-.whats-included-block {
+.contact-direct-links {
   margin-top: 26px;
-  margin-bottom: 34px;
-}
-
-.included-label {
-  display: inline-block;
-  font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-white);
-  border-bottom: 1px solid rgba(232, 226, 213, 0.55);
-  padding-bottom: 4px;
-  margin-bottom: 12px;
-}
-
-.included-text {
-  font-family: var(--font-sans);
-  font-size: 0.71rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--text-cream);
-}
-
-/* Accordion List */
-.accordion-list {
-  border-top: 1px solid var(--border-subtle);
-}
-
-.accordion-item {
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.accordion-header {
-  width: 100%;
-  padding: 16px 2px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-  transition: opacity 0.2s ease;
-}
-
-.accordion-header:hover {
-  opacity: 0.85;
-}
-
-.accordion-title {
-  font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-white);
-}
-
-.accordion-chevron {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  color: var(--text-cream);
-  transition: transform 0.25s ease;
+  gap: 24px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
 }
 
-.accordion-header[aria-expanded="true"] .accordion-chevron {
-  transform: rotate(180deg);
-}
-
-.accordion-panel {
-  overflow: hidden;
-}
-
-.accordion-panel-inner {
-  padding: 4px 2px 22px;
-}
-
-.pkg-price {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-style: italic;
-  color: var(--text-white);
-  margin-bottom: 10px;
-}
-
-.pkg-features {
-  list-style: none;
-  margin-bottom: 16px;
-}
-
-.pkg-features li {
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 300;
-  line-height: 1.75;
-  color: var(--text-cream);
-  padding-left: 14px;
-  position: relative;
-}
-
-.pkg-features li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--btn-tan-hover);
-}
-
-.btn-inquire-inline {
-  background-color: var(--btn-tan);
-  color: var(--text-white);
-  font-size: 0.56rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 8px 18px;
-  transition: background-color 0.2s ease;
-}
-
-.btn-inquire-inline:hover {
-  background-color: var(--btn-tan-hover);
+.contact-direct-links a:hover {
+  color: var(--gold-accent);
 }
 
 /* ==========================================================================
-   5. FOOTER & MANDATORY CREDIT
+   7. MINIMAL EDITORIAL FOOTER
    ========================================================================== */
 
 .site-footer {
   background-color: var(--bg-dark);
   border-top: 1px solid rgba(232, 226, 213, 0.12);
-  padding: 42px 24px 28px;
+  padding: 52px 24px 32px;
   text-align: center;
 }
 
 .footer-inner {
-  max-width: 1080px;
+  max-width: 1140px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.16em;
+  color: var(--text-white);
 }
 
 .footer-nav-row {
@@ -630,26 +815,42 @@ button {
 }
 
 .footer-nav-row a {
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.22em;
+  text-transform: uppercase;
   color: var(--text-muted);
   transition: color 0.2s ease;
 }
 
 .footer-nav-row a:hover {
-  color: var(--text-white);
+  color: var(--gold-accent);
 }
 
-.footer-tagline {
-  font-size: 0.58rem;
+.footer-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--text-cream);
+}
+
+.footer-contact-row a:hover {
+  color: var(--gold-accent);
+}
+
+.footer-copyright {
+  font-size: 0.62rem;
   font-weight: 300;
-  letter-spacing: 0.26em;
-  color: rgba(232, 226, 213, 0.55);
+  letter-spacing: 0.18em;
+  color: rgba(232, 226, 213, 0.5);
+  margin-top: 4px;
 }
 
 .footer-credit-bar {
-  margin-top: 8px;
+  margin-top: 6px;
   padding-top: 14px;
   border-top: 1px solid rgba(232, 226, 213, 0.08);
   width: 100%;
@@ -658,10 +859,10 @@ button {
 
 .palex-credit {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   font-weight: 300;
   letter-spacing: 0.12em;
-  color: rgba(232, 226, 213, 0.62);
+  color: rgba(232, 226, 213, 0.55);
   transition: color 0.2s ease;
 }
 
@@ -670,345 +871,107 @@ button {
 }
 
 /* ==========================================================================
-   6. INTERACTIVE MODALS
+   8. LIGHTBOX MODAL FOR LARGE PHOTO VIEWING
    ========================================================================== */
 
-.modal-backdrop {
+.lightbox-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 1000;
-  background-color: rgba(10, 10, 10, 0.82);
+  z-index: 1200;
+  background-color: rgba(10, 10, 9, 0.94);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px;
 }
 
-.modal-backdrop[hidden] {
+.lightbox-backdrop[hidden] {
   display: none;
 }
 
-.modal-box {
+.lightbox-content {
   position: relative;
-  width: 100%;
-  max-width: 540px;
-  background-color: #1c1b15;
-  border: 1px solid rgba(232, 226, 213, 0.25);
-  padding: 38px 34px;
-  color: var(--text-cream);
+  max-width: 1100px;
   max-height: 90vh;
-  overflow-y: auto;
-}
-
-.modal-box-wide {
-  max-width: 760px;
-}
-
-.modal-close {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  font-size: 1.5rem;
-  line-height: 1;
-  color: var(--text-muted);
-  transition: color 0.2s ease;
-}
-
-.modal-close:hover {
-  color: var(--text-white);
-}
-
-.modal-eyebrow {
-  font-size: 0.6rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--btn-tan-hover);
-  margin-bottom: 6px;
-}
-
-.modal-title {
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  color: var(--text-white);
-  margin-bottom: 14px;
-}
-
-.modal-desc {
-  font-size: 0.75rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--text-cream);
-  margin-bottom: 20px;
-}
-
-.modal-highlights {
-  margin-bottom: 24px;
-  padding: 14px 16px;
-  background-color: rgba(255, 255, 255, 0.03);
-  border-left: 2px solid var(--btn-tan);
-  font-size: 0.72rem;
-  line-height: 1.75;
-}
-
-.modal-actions {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 8px;
-}
-
-/* Inquiry Form */
-.inquiry-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  align-items: center;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+.lightbox-img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border: 1px solid rgba(232, 226, 213, 0.18);
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-group label {
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
-  color: var(--text-muted);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  background-color: #121212;
-  border: 1px solid rgba(232, 226, 213, 0.25);
-  color: var(--text-white);
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  padding: 10px 12px;
-  outline: none;
-  border-radius: 0;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--btn-tan-hover);
-}
-
-.form-feedback {
-  font-size: 0.72rem;
-  color: #d6c89d;
-  min-height: 18px;
-}
-
-/* Gallery Grid in Modal */
-.gallery-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 22px;
-}
-
-.gallery-thumb {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  background-color: #121212;
-  overflow: hidden;
-}
-
-.gallery-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.gallery-thumb span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 8px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), transparent);
-  font-size: 0.56rem;
-  letter-spacing: 0.2em;
+.lightbox-meta {
+  margin-top: 14px;
   text-align: center;
 }
 
+.lightbox-cat {
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.lightbox-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text-white);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 22px;
+  right: 28px;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text-cream);
+  padding: 6px 12px;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--gold-accent);
+}
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(24, 23, 20, 0.8);
+  border: 1px solid rgba(232, 226, 213, 0.22);
+  color: var(--text-white);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease;
+}
+
+.lightbox-nav:hover {
+  background-color: var(--btn-tan);
+}
+
+.lightbox-prev {
+  left: 24px;
+}
+
+.lightbox-next {
+  right: 24px;
+}
+
 /* ==========================================================================
-   7. PROPORTIONAL RESPONSIVE SCALING (PRESERVING VISUAL IDENTITY)
+   9. FLOATING WHATSAPP BUTTON
    ========================================================================== */
 
-@media (max-width: 960px) {
-  .main-nav {
-    padding: 20px 24px;
-  }
-
-  .nav-left {
-    gap: 16px;
-  }
-
-  .categories-section {
-    padding: 48px 24px 68px;
-  }
-
-  .categories-container {
-    gap: 12px;
-  }
-
-  .category-title {
-    font-size: 0.88rem;
-  }
-
-  .btn-learn-more {
-    padding: 6px 10px;
-    font-size: 0.5rem;
-  }
-
-  .packages-section {
-    padding: 72px 24px 80px;
-  }
-
-  .packages-container {
-    gap: 36px;
-  }
-}
-
-@media (max-width: 720px) {
-  .main-nav {
-    padding: 16px 14px;
-    gap: 8px;
-  }
-
-  .nav-left {
-    gap: 10px;
-  }
-
-  .nav-link {
-    font-size: 0.55rem;
-    letter-spacing: 0.14em;
-  }
-
-  .brand-logo-img {
-    max-height: 32px;
-  }
-
-  .wordmark-main {
-    font-size: 1rem;
-  }
-
-  .btn-connect {
-    padding: 8px 12px;
-    font-size: 0.54rem;
-    letter-spacing: 0.14em;
-  }
-
-  .hero-section {
-    min-height: 400px;
-    height: 48vh;
-  }
-
-  /* Keep the 5-column strip proportional on compact screens with horizontal fit or 3+2 balanced scaling */
-  .categories-section {
-    padding: 36px 12px 54px;
-  }
-
-  .categories-container {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 6px;
-  }
-
-  .category-img-box {
-    margin-bottom: 10px;
-  }
-
-  .category-title {
-    font-size: 0.58rem;
-    letter-spacing: 0.06em;
-    margin-bottom: 7px;
-  }
-
-  .btn-learn-more {
-    padding: 5px 6px;
-    font-size: 0.44rem;
-    letter-spacing: 0.08em;
-  }
-
-  .testimonial-section {
-    padding: 56px 18px;
-    min-height: 290px;
-  }
-
-  .packages-section {
-    padding: 54px 18px 64px;
-  }
-
-  .packages-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .packages-details-col {
-    padding-top: 0;
-  }
-
-  .packages-heading {
-    font-size: 1.45rem;
-    margin-bottom: 14px;
-  }
-
-  .packages-description,
-  .included-text {
-    font-size: 0.64rem;
-    line-height: 1.65;
-  }
-
-  .accordion-title {
-    font-size: 0.58rem;
-    letter-spacing: 0.12em;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 440px) {
-  .packages-container {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .categories-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .categories-container .category-card:last-child {
-    grid-column: span 2;
-    max-width: 50%;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .category-title {
-    font-size: 0.85rem;
-  }
-
-  .btn-learn-more {
-    font-size: 0.54rem;
-    padding: 7px 14px;
-  }
-}
-
-
-/* Floating WhatsApp Button */
 .whatsapp-float {
   position: fixed;
   bottom: 24px;
@@ -1022,584 +985,674 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.08);
   background-color: #20ba5a;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 .whatsapp-float svg {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   fill: currentColor;
 }
 
-@media (max-width: 720px) {
+/* ==========================================================================
+   10. RESPONSIVE DESIGN (DESKTOP, TABLET & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1120px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item,
+  .gallery-item.item-wide,
+  .gallery-item.item-half {
+    grid-column: span 1;
+    aspect-ratio: 4 / 4.5;
+  }
+
+  .gallery-item.item-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 0;
+    aspect-ratio: 4 / 4.5;
+  }
+}
+
+@media (max-width: 860px) {
+  .main-nav {
+    padding: 20px 24px;
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .nav-left {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(17, 17, 16, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    z-index: 25;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-left.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-left .nav-link {
+    font-size: 0.9rem;
+    letter-spacing: 0.28em;
+  }
+
+  .nav-right .nav-link {
+    display: none;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-image-frame {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 78vh;
+  }
+
+  .main-nav {
+    padding: 16px 18px;
+  }
+
+  .wordmark-main {
+    font-size: 1.08rem;
+  }
+
+  .btn-primary {
+    padding: 12px 22px;
+    font-size: 0.62rem;
+  }
+
+  .services-section,
+  .about-section,
+  .gallery-section,
+  .pillars-section,
+  .contact-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-nav {
+    width: 38px;
+    height: 38px;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+
   .whatsapp-float {
     bottom: 18px;
     right: 18px;
-    width: 48px;
-    height: 48px;
-  }
-  .whatsapp-float svg {
-    width: 26px;
-    height: 26px;
+    width: 50px;
+    height: 50px;
   }
 }
   </style>
 </head>
 <body>
 
-  <!-- HERO & NAVIGATION SECTION -->
-  <header class="hero-section" id="top">
+  <!-- ======================================================================
+       SECTION 1: HERO / HOMEPAGE
+       ====================================================================== -->
+  <header class="hero-section" id="home">
     <div class="hero-bg-wrapper">
-      <img src="hero.jpg" alt="JOSED CONCEPT Photography & Video Productions" class="hero-bg-img" onerror="this.classList.add('img-missing')">
+      <img src="hero.jpg" alt="JOSED CONCEPT Photography and Videography" class="hero-bg-img" onerror="this.classList.add('img-missing')">
       <div class="hero-overlay"></div>
     </div>
 
     <nav class="main-nav" aria-label="Primary Navigation">
-      <div class="nav-left">
-        <a href="#about-modal" class="nav-link" data-modal="about-modal">ABOUT</a>
-        <a href="#packages" class="nav-link active">INVESTMENT</a>
-        <a href="#gallery-modal" class="nav-link" data-modal="gallery-modal">GALLERY</a>
+      <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-left" id="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
 
-      <a href="#top" class="brand-logo-link" aria-label="JOSED CONCEPT Home">
+      <a href="#home" class="brand-logo-link" aria-label="JOSED CONCEPT Home">
         <img src="logo.png" alt="JOSED CONCEPT Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="brand-wordmark" style="display: none;">
           <span class="wordmark-main">JOSED CONCEPT</span>
-          <span class="wordmark-sub">CONCEPT</span>
+          <span class="wordmark-sub">PHOTOGRAPHY &amp; VIDEO</span>
         </div>
       </a>
 
       <div class="nav-right">
-        <button type="button" class="btn-connect" data-modal="connect-modal">LET'S CONNECT</button>
+        <a href="https://wa.me/27671437242?text=Hello%20JOSED%20CONCEPT%2C%20I%20would%20like%20to%20enquire%20about%20your%20photography%20and%20videography%20services." target="_blank" rel="noopener noreferrer" class="btn-primary">LET'S CONNECT</a>
       </div>
     </nav>
 
     <div class="hero-center-content">
-      <h1 class="hero-title" style="font-family: var(--font-display); text-transform: none;">JoseD Concept</h1>
+      <p class="hero-brand-tag">JOSED CONCEPT &bull; PHOTOGRAPHY &amp; VIDEOGRAPHY</p>
+      <h1 class="hero-title">CAPTURING MOMENTS. CREATING MEMORIES.</h1>
+      <p class="hero-subtitle">
+        Professional photography and videography for life's special moments. Every picture tells a story, and every moment deserves to be remembered.
+      </p>
+      <a href="https://wa.me/27671437242?text=Hello%20JOSED%20CONCEPT%2C%20I%20would%20like%20to%20enquire%20about%20your%20photography%20and%20videography%20services." target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <span>LET'S CONNECT</span>
+      </a>
     </div>
 
-    <!-- Subtle downward convex curve at bottom of hero -->
     <div class="hero-curve-bottom" aria-hidden="true">
       <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path d="M0,0 Q720,70 1440,0 L1440,70 L0,70 Z" fill="#121212"></path>
+        <path d="M0,0 Q720,70 1440,0 L1440,70 L0,70 Z" fill="#111110"></path>
       </svg>
     </div>
   </header>
 
-  <!-- 5-COLUMN CATEGORY STRIP -->
-  <section class="categories-section" id="categories" aria-label="Photography Categories">
-    <div class="categories-container">
-      <article class="category-card">
-        <div class="category-img-box">
-          <img src="image02.jpg" alt="Weddings photography" class="category-img" onerror="this.classList.add('img-missing')">
+  <!-- ======================================================================
+       SECTION 2: OUR SERVICES
+       ====================================================================== -->
+  <section class="services-section" id="services" aria-labelledby="services-heading">
+    <div class="section-header-center">
+      <span class="section-eyebrow">WHAT WE DO</span>
+      <h2 class="section-heading" id="services-heading">OUR SERVICES</h2>
+    </div>
+
+    <div class="services-grid">
+      <!-- 1. Weddings & Lobola -->
+      <article class="service-card">
+        <div class="service-img-box">
+          <img src="image02.jpg" alt="Weddings and Lobola photography" class="service-img" onerror="this.classList.add('img-missing')">
         </div>
-        <h2 class="category-title">WEDDINGS</h2>
-        <button type="button" class="btn-learn-more" data-category="weddings">LEARN MORE</button>
+        <div class="service-body">
+          <div>
+            <h3 class="service-title">WEDDINGS &amp; LOBOLA</h3>
+            <p class="service-desc">Capturing the love, traditions and unforgettable moments of your special day.</p>
+          </div>
+          <a href="#gallery" class="btn-outline service-gallery-link" data-filter="weddings">VIEW GALLERY</a>
+        </div>
       </article>
 
-      <article class="category-card">
-        <div class="category-img-box">
-          <img src="image03.jpg" alt="Elopements photography" class="category-img" onerror="this.classList.add('img-missing')">
+      <!-- 2. Celebrations -->
+      <article class="service-card">
+        <div class="service-img-box">
+          <img src="image03.jpg" alt="Birthday celebrations and special occasions" class="service-img" onerror="this.classList.add('img-missing')">
         </div>
-        <h2 class="category-title">ELOPEMENTS</h2>
-        <button type="button" class="btn-learn-more" data-category="elopements">LEARN MORE</button>
+        <div class="service-body">
+          <div>
+            <h3 class="service-title">CELEBRATIONS</h3>
+            <p class="service-desc">Birthday parties, anniversaries and special occasions captured beautifully.</p>
+          </div>
+          <a href="#gallery" class="btn-outline service-gallery-link" data-filter="celebrations">VIEW GALLERY</a>
+        </div>
       </article>
 
-      <article class="category-card">
-        <div class="category-img-box">
-          <img src="image04.jpg" alt="Intimate photography" class="category-img" onerror="this.classList.add('img-missing')">
+      <!-- 3. Corporate Events -->
+      <article class="service-card">
+        <div class="service-img-box">
+          <img src="image04.jpg" alt="Corporate events and business launches" class="service-img" onerror="this.classList.add('img-missing')">
         </div>
-        <h2 class="category-title">INTIMATE</h2>
-        <button type="button" class="btn-learn-more" data-category="intimate">LEARN MORE</button>
+        <div class="service-body">
+          <div>
+            <h3 class="service-title">CORPORATE EVENTS</h3>
+            <p class="service-desc">Professional coverage for business launches, corporate functions and special events.</p>
+          </div>
+          <a href="#gallery" class="btn-outline service-gallery-link" data-filter="corporate">VIEW GALLERY</a>
+        </div>
       </article>
 
-      <article class="category-card">
-        <div class="category-img-box">
-          <img src="image05.jpg" alt="Adventure photography" class="category-img" onerror="this.classList.add('img-missing')">
+      <!-- 4. Modelling & Portraits -->
+      <article class="service-card">
+        <div class="service-img-box">
+          <img src="image05.jpg" alt="Modelling and portrait photography" class="service-img" onerror="this.classList.add('img-missing')">
         </div>
-        <h2 class="category-title">ADVENTURE</h2>
-        <button type="button" class="btn-learn-more" data-category="adventure">LEARN MORE</button>
+        <div class="service-body">
+          <div>
+            <h3 class="service-title">MODELLING &amp; PORTRAITS</h3>
+            <p class="service-desc">Creative photography that captures personality, confidence and style.</p>
+          </div>
+          <a href="#gallery" class="btn-outline service-gallery-link" data-filter="portraits">VIEW GALLERY</a>
+        </div>
       </article>
 
-      <article class="category-card">
-        <div class="category-img-box">
-          <img src="image06.jpg" alt="Lifestyle photography" class="category-img" onerror="this.classList.add('img-missing')">
+      <!-- 5. Photography & Video -->
+      <article class="service-card">
+        <div class="service-img-box">
+          <img src="image06.jpg" alt="Professional photography and videography" class="service-img" onerror="this.classList.add('img-missing')">
         </div>
-        <h2 class="category-title">LIFESTYLE</h2>
-        <button type="button" class="btn-learn-more" data-category="lifestyle">LEARN MORE</button>
+        <div class="service-body">
+          <div>
+            <h3 class="service-title">PHOTOGRAPHY &amp; VIDEO</h3>
+            <p class="service-desc">Quality visual storytelling through professional photography and videography.</p>
+          </div>
+          <a href="#gallery" class="btn-outline service-gallery-link" data-filter="all">VIEW GALLERY</a>
+        </div>
       </article>
     </div>
   </section>
 
-  <!-- FULL-BLEED TESTIMONIAL BANNER -->
-  <section class="testimonial-section" aria-label="Client Testimonial">
-    <div class="testimonial-bg-wrapper">
-      <img src="image07.jpg" alt="Close-up romantic couple portrait" class="testimonial-bg-img" onerror="this.classList.add('img-missing')">
-      <div class="testimonial-overlay"></div>
-    </div>
-
-    <div class="testimonial-content">
-      <blockquote class="testimonial-quote-block">
-        <h2 class="testimonial-heading">
-          <span class="quote-mark quote-open">&ldquo;</span>MEMORABLE MOMENTS<span class="quote-mark quote-close">&rdquo;</span>
-        </h2>
-        <p class="testimonial-body">
-          Karen literally makes you feel like she is a great friend that came to shoot one of your most special days. People asked me multiple times after our wedding how long we have known the gal that did our photography, because she was so personable and friendly. She truly was invested and part of our day, not just someone shooting from the sidelines. Thank you for shooting our most memorable moments.
-        </p>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- WEDDING PACKAGES & ACCORDION SECTION -->
-  <section class="packages-section" id="packages" aria-labelledby="wedding-packages-heading">
-    <div class="packages-container">
-      <!-- Left Portrait Image -->
-      <div class="packages-image-col">
-        <div class="packages-portrait-frame">
-          <img src="image08.jpg" alt="Editorial bride and groom portrait" class="packages-portrait-img" onerror="this.classList.add('img-missing')">
-        </div>
+  <!-- ======================================================================
+       SECTION 3: ABOUT JOSED CONCEPT
+       ====================================================================== -->
+  <section class="about-section" id="about" aria-labelledby="about-heading">
+    <div class="about-container">
+      <div class="about-image-frame">
+        <img src="image08.jpg" alt="JOSED CONCEPT Visual Storytelling" class="about-img" onerror="this.classList.add('img-missing')">
       </div>
 
-      <!-- Right Package Details & Accordions -->
-      <div class="packages-details-col">
-        <h2 class="packages-heading" id="wedding-packages-heading">
-          <span>WEDDING</span>
-          <span>PACKAGES</span>
-        </h2>
-
-        <p class="packages-description">
-          No matter how you envision your wedding day or how much coverage you require, I have packages to capture every moment, from getting ready to the dance floor celebrations. You can relax knowing that every special moment will be beautifully captured for you to relive over and over.
+      <div class="about-content">
+        <span class="section-eyebrow">ABOUT JOSED CONCEPT</span>
+        <h2 class="about-heading" id="about-heading">MORE THAN JUST PHOTOGRAPHS</h2>
+        <p class="about-text">
+          At JOSED CONCEPT, we believe every moment has a story worth telling. We are passionate about photography and videography, capturing genuine emotions, special celebrations and unforgettable experiences.
         </p>
-
-        <p class="packages-description">
-          Getting married outside of Colorado? I'm always up for an adventure! Reach out to learn about my destination wedding packages and travel fees!
+        <p class="about-text">
+          From intimate family occasions to grand celebrations and corporate events, we bring creativity, professionalism and attention to detail to every project.
         </p>
-
-        <div class="whats-included-block">
-          <h3 class="included-label">WHATS INCLUDED?</h3>
-          <p class="included-text">
-            Optional engagement session, getting ready photos, full ceremony, family photos, reception photos, sunset couples photos
-          </p>
-        </div>
-
-        <div class="accordion-list" role="region" aria-label="Wedding Package Tiers">
-          <!-- Accordion Item 1 -->
-          <div class="accordion-item">
-            <button type="button" class="accordion-header" aria-expanded="false">
-              <span class="accordion-title">HALF DAY (6 HOURS)</span>
-              <span class="accordion-chevron" aria-hidden="true">
-                <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
-                  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </button>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-panel-inner">
-                <p class="pkg-price">Starting at $2,800</p>
-                <ul class="pkg-features">
-                  <li>Up to 6 consecutive hours of wedding day coverage</li>
-                  <li>Complimentary 1-hour Colorado engagement session</li>
-                  <li>Custom timeline consultation &amp; vendor coordination</li>
-                  <li>High-resolution edited online gallery with full print release</li>
-                  <li>Sneak peek gallery delivered within 72 hours</li>
-                </ul>
-                <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Half Day (6 Hours)">INQUIRE ABOUT HALF DAY</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Accordion Item 2 -->
-          <div class="accordion-item">
-            <button type="button" class="accordion-header" aria-expanded="false">
-              <span class="accordion-title">FULL DAY (8 HOURS)</span>
-              <span class="accordion-chevron" aria-hidden="true">
-                <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
-                  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </button>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-panel-inner">
-                <p class="pkg-price">Starting at $3,600</p>
-                <ul class="pkg-features">
-                  <li>Up to 8 consecutive hours from prep through reception</li>
-                  <li>Complimentary 90-minute engagement session</li>
-                  <li>Second photographer included for multi-angle coverage</li>
-                  <li>High-resolution edited online gallery with full print release</li>
-                  <li>Sneak peek gallery delivered within 48 hours</li>
-                </ul>
-                <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Full Day (8 Hours)">INQUIRE ABOUT FULL DAY</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Accordion Item 3 -->
-          <div class="accordion-item">
-            <button type="button" class="accordion-header" aria-expanded="false">
-              <span class="accordion-title">EXTENDED COVERAGE (10 HOURS)</span>
-              <span class="accordion-chevron" aria-hidden="true">
-                <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
-                  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </button>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-panel-inner">
-                <p class="pkg-price">Starting at $4,400</p>
-                <ul class="pkg-features">
-                  <li>Up to 10 consecutive hours including grand exit coverage</li>
-                  <li>Complimentary engagement session + bridal portrait session</li>
-                  <li>Second photographer included all day</li>
-                  <li>Custom heirloom linen-bound photo album credit ($300 value)</li>
-                  <li>Full online gallery with print rights &amp; 48-hour sneak peeks</li>
-                </ul>
-                <button type="button" class="btn-inquire-inline" data-modal="connect-modal" data-package="Extended Coverage (10 Hours)">INQUIRE ABOUT EXTENDED</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p class="about-text">
+          Our goal is simple: to give you beautiful memories that last a lifetime.
+        </p>
+        <p class="about-motto">&ldquo;Try us... stay with us forever.&rdquo;</p>
       </div>
     </div>
   </section>
 
-  <!-- SUBTLE EDITORIAL FOOTER & MANDATORY CREDIT -->
+  <!-- ======================================================================
+       SECTION 4: OUR WORK / PHOTO GALLERY
+       ====================================================================== -->
+  <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
+    <div class="section-header-center">
+      <span class="section-eyebrow">SELECTED PORTFOLIO</span>
+      <h2 class="section-heading" id="gallery-heading">OUR WORK</h2>
+    </div>
+
+    <div class="gallery-filters" role="tablist" aria-label="Filter Portfolio Gallery">
+      <button type="button" class="filter-btn active" data-filter="all">All Work</button>
+      <button type="button" class="filter-btn" data-filter="weddings">Weddings &amp; Lobola</button>
+      <button type="button" class="filter-btn" data-filter="celebrations">Birthdays &amp; Celebrations</button>
+      <button type="button" class="filter-btn" data-filter="corporate">Corporate Events</button>
+      <button type="button" class="filter-btn" data-filter="portraits">Modelling &amp; Portraits</button>
+      <button type="button" class="filter-btn" data-filter="special">Other Special Moments</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid">
+      <figure class="gallery-item item-tall" data-category="weddings" data-title="Weddings & Lobola" data-src="image02.jpg">
+        <img src="image02.jpg" alt="Weddings and Lobola celebration" onerror="this.classList.add('img-missing')">
+        <figcaption class="gallery-item-overlay">
+          <span class="gallery-item-cat">Weddings &amp; Lobola</span>
+          <div class="gallery-item-caption">
+            <span>Timeless Union</span>
+            <span class="zoom-hint">View Larger</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item item-wide" data-category="special" data-title="Other Special Moments" data-src="hero.jpg">
+        <img src="hero.jpg" alt="Memorable occasion photography" onerror="this.classList.add('img-missing')">
+        <figcaption class="gallery-item-overlay">
+          <span class="gallery-item-cat">Other Special Moments</span>
+          <div class="gallery-item-caption">
+            <span>Signature Moments</span>
+            <span class="zoom-hint">View Larger</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-category="celebrations" data-title="Birthdays & Celebrations" data-src="image03.jpg">
+        <img src="image03.jpg" alt="Birthdays and celebrations photography" onerror="this.classList.add('img-missing')">
+        <figcaption class="gallery-item-overlay">
+          <span class="gallery-item-cat">Birthdays &amp; Celebrations</span>
+          <div class="gallery-item-caption">
+            <span>Joyful Milestones</span>
+            <span class="zoom-hint">View Larger</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-category="corporate" data-title="Corporate Events" data-src="image04.jpg">
+        <img src="image04.jpg" alt="Corporate event and launch coverage" onerror="this.classList.add('img-missing')">
+        <figcaption class="gallery-item-overlay">
+          <span class="gallery-item-cat">Corporate Events</span>
+          <div class="gallery-item-caption">
+            <span>Business Launches &amp; Functions</span>
+            <span class="zoom-hint">View Larger</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item item-half" data-category="portraits" data-title="Modelling & Portraits" data-src="image05.jpg">
+        <img src="image05.jpg" alt="Modelling and portrait session" onerror="this.classList.add('img-missing')">
+        <figcaption class="gallery-item-overlay">
+          <span class="gallery-item-cat">Modelling &amp; Portraits</span>
+          <div class="gallery-item-caption">
+            <span>Editorial Portraiture</span>
+            <span class="zoom-hint">View Larger</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item item-half" data-category="special" data-title="Other Special Moments" data-src="image06.jpg">
+        <img src="image06.jpg" alt="Lifestyle and special moments" onerror="this.classList.add('img-missing')">
+        <figcaption class="gallery-item-overlay">
+          <span class="gallery-item-cat">Other Special Moments</span>
+          <div class="gallery-item-caption">
+            <span>Visual Storytelling</span>
+            <span class="zoom-hint">View Larger</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item item-half" data-category="weddings" data-title="Weddings & Lobola" data-src="image07.jpg">
+        <img src="image07.jpg" alt="Intimate wedding portrait" onerror="this.classList.add('img-missing')">
+        <figcaption class="gallery-item-overlay">
+          <span class="gallery-item-cat">Weddings &amp; Lobola</span>
+          <div class="gallery-item-caption">
+            <span>Genuine Emotion</span>
+            <span class="zoom-hint">View Larger</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item item-half" data-category="portraits" data-title="Modelling & Portraits" data-src="image08.jpg">
+        <img src="image08.jpg" alt="Portrait and editorial showcase" onerror="this.classList.add('img-missing')">
+        <figcaption class="gallery-item-overlay">
+          <span class="gallery-item-cat">Modelling &amp; Portraits</span>
+          <div class="gallery-item-caption">
+            <span>Confidence &amp; Style</span>
+            <span class="zoom-hint">View Larger</span>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 5: WHY CHOOSE JOSED CONCEPT?
+       ====================================================================== -->
+  <section class="pillars-section" aria-labelledby="pillars-heading">
+    <div class="section-header-center">
+      <span class="section-eyebrow">OUR APPROACH</span>
+      <h2 class="section-heading" id="pillars-heading">WHY CHOOSE JOSED CONCEPT?</h2>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <span class="pillar-number">01</span>
+        <h3 class="pillar-title">Quality Equipment</h3>
+        <p class="pillar-desc">Professional photography and videography equipment.</p>
+      </div>
+
+      <div class="pillar-card">
+        <span class="pillar-number">02</span>
+        <h3 class="pillar-title">Attention to Detail</h3>
+        <p class="pillar-desc">We focus on the little moments that make every occasion special.</p>
+      </div>
+
+      <div class="pillar-card">
+        <span class="pillar-number">03</span>
+        <h3 class="pillar-title">Reliable Service</h3>
+        <p class="pillar-desc">We value your time and aim to deliver a smooth, professional experience.</p>
+      </div>
+
+      <div class="pillar-card">
+        <span class="pillar-number">04</span>
+        <h3 class="pillar-title">Creative Storytelling</h3>
+        <p class="pillar-desc">We capture moments in a natural, beautiful and memorable way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 6: LET'S WORK TOGETHER / CONTACT
+       ====================================================================== -->
+  <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+    <div class="contact-bg-wrapper" aria-hidden="true">
+      <img src="image07.jpg" alt="" onerror="this.classList.add('img-missing')">
+    </div>
+    <div class="contact-overlay" aria-hidden="true"></div>
+
+    <div class="contact-content">
+      <span class="section-eyebrow">GET IN TOUCH</span>
+      <h2 class="contact-heading" id="contact-heading">LET'S CAPTURE YOUR NEXT SPECIAL MOMENT.</h2>
+      <p class="contact-desc">
+        Have an event coming up or looking for professional photography and videography? We'd love to hear from you. Get in touch with us on WhatsApp to discuss your requirements.
+      </p>
+      <a href="https://wa.me/27671437242?text=Hello%20JOSED%20CONCEPT%2C%20I%20would%20like%20to%20enquire%20about%20photography%20and%20videography%20for%20an%20upcoming%20event." target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <span>ENQUIRE ON WHATSAPP</span>
+      </a>
+
+      <div class="contact-direct-links">
+        <a href="tel:+27671437242">WhatsApp / Call: +27 67 143 7242</a>
+        <a href="mailto:Adedayoj11@gmail.com">Email: Adedayoj11@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       MINIMAL EDITORIAL FOOTER
+       ====================================================================== -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-nav-row">
-        <a href="#about-modal" data-modal="about-modal">ABOUT</a>
-        <a href="#categories">COLLECTIONS</a>
-        <a href="#packages">WEDDINGS</a>
-        <a href="#gallery-modal" data-modal="gallery-modal">GALLERY</a>
-        <a href="#connect-modal" data-modal="connect-modal">LET'S CONNECT</a>
+      <a href="#home" class="footer-brand">JOSED CONCEPT</a>
+
+      <nav class="footer-nav-row" aria-label="Footer Navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-contact-row">
+        <a href="https://wa.me/27671437242" target="_blank" rel="noopener noreferrer">WhatsApp: +27 67 143 7242</a>
+        <a href="mailto:Adedayoj11@gmail.com">Adedayoj11@gmail.com</a>
       </div>
-      <p class="footer-tagline">JOSED CONCEPT CONCEPT &bull; COLORADO &amp; WORLDWIDE</p>
+
+      <p class="footer-copyright">&copy; <span id="current-year">2026</span> JOSED CONCEPT. All Rights Reserved.</p>
+
       <div class="footer-credit-bar">
         <a href="https://palexdigital.pages.dev/" target="_blank" rel="noopener noreferrer" class="palex-credit">Developed By paléXdigital</a>
       </div>
     </div>
   </footer>
 
-  <!-- INTERACTIVE MODAL: CATEGORY DETAILS -->
-  <div class="modal-backdrop" id="category-modal" role="dialog" aria-modal="true" aria-labelledby="cat-modal-title" hidden>
-    <div class="modal-box">
-      <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
-      <p class="modal-eyebrow" id="cat-modal-eyebrow">COLLECTION DETAILS</p>
-      <h2 class="modal-title" id="cat-modal-title">WEDDINGS</h2>
-      <p class="modal-desc" id="cat-modal-desc"></p>
-      <div class="modal-highlights" id="cat-modal-highlights"></div>
-      <div class="modal-actions">
-        <button type="button" class="btn-connect" id="cat-modal-inquire">INQUIRE FOR THIS COLLECTION</button>
+  <!-- ======================================================================
+       LIGHTBOX MODAL FOR LARGE IMAGE VIEWING
+       ====================================================================== -->
+  <div class="lightbox-backdrop" id="lightbox" role="dialog" aria-modal="true" aria-label="Image Preview" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close image preview">&times;</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <div class="lightbox-content">
+      <img src="" alt="Enlarged portfolio photograph" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-meta">
+        <span class="lightbox-cat" id="lightbox-cat"></span>
+        <p class="lightbox-title" id="lightbox-title"></p>
       </div>
     </div>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
   </div>
 
-  <!-- INTERACTIVE MODAL: LET'S CONNECT / INQUIRY FORM -->
-  <div class="modal-backdrop" id="connect-modal" role="dialog" aria-modal="true" aria-labelledby="connect-modal-title" hidden>
-    <div class="modal-box">
-      <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
-      <p class="modal-eyebrow">GET IN TOUCH</p>
-      <h2 class="modal-title" id="connect-modal-title">LET'S CONNECT</h2>
-      <p class="modal-desc">Tell me about your story, your vision, and the moments you want preserved forever.</p>
-      <div class="contact-direct-info" style="margin-bottom: 16px; font-size: 0.75rem; line-height: 1.6; color: var(--text-cream);">
-        <p>Email: <a href="mailto:Adedayoj11@gmail.com" style="color: var(--text-white); text-decoration: underline;">Adedayoj11@gmail.com</a></p>
-        <p>Phone: <a href="tel:+27671437242" style="color: var(--text-white); text-decoration: underline;">+27 67 143 7242</a> (ZAF)</p>
-      </div>
-
-      <form id="inquiry-form" class="inquiry-form" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="inq-name">YOUR NAMES *</label>
-            <input type="text" id="inq-name" name="name" placeholder="e.g. Elena &amp; Marcus" required>
-          </div>
-          <div class="form-group">
-            <label for="inq-email">EMAIL ADDRESS *</label>
-            <input type="email" id="inq-email" name="email" placeholder="you@example.com" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="inq-date">EVENT DATE</label>
-            <input type="date" id="inq-date" name="date">
-          </div>
-          <div class="form-group">
-            <label for="inq-collection">SESSION / PACKAGE</label>
-            <select id="inq-collection" name="collection">
-              <option value="Weddings - Half Day (6 Hours)">Weddings — Half Day (6 Hours)</option>
-              <option value="Weddings - Full Day (8 Hours)">Weddings — Full Day (8 Hours)</option>
-              <option value="Weddings - Extended Coverage (10 Hours)">Weddings — Extended Coverage (10 Hours)</option>
-              <option value="Elopements">Elopements</option>
-              <option value="Intimate">Intimate</option>
-              <option value="Adventure">Adventure</option>
-              <option value="Lifestyle">Lifestyle</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="inq-location">LOCATION / VENUE</label>
-          <input type="text" id="inq-location" name="location" placeholder="Colorado or Destination">
-        </div>
-
-        <div class="form-group">
-          <label for="inq-message">TELL ME ABOUT YOUR VISION *</label>
-          <textarea id="inq-message" name="message" rows="3" placeholder="Share details about your celebration..." required></textarea>
-        </div>
-
-        <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
-
-        <div class="modal-actions">
-          <button type="submit" class="btn-connect">SEND INQUIRY</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- INTERACTIVE MODAL: ABOUT -->
-  <div class="modal-backdrop" id="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-modal-title" hidden>
-    <div class="modal-box">
-      <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
-      <p class="modal-eyebrow">BEHIND THE LENS</p>
-      <h2 class="modal-title" id="about-modal-title">ABOUT JOSED CONCEPT</h2>
-      <p class="modal-desc">
-        Josed Concept is a business of photography &amp; Video productions. We cover special events like Birthday Parties, Lobola weddings, Business launch, Modelings &amp; lots more. We have high standard photography equipment that produces the best quality memories for your events. Our services are unique, timely, affordable and reliable. Our motto is try us...stay with us forever
-      </p>
-      <div class="modal-actions">
-        <button type="button" class="btn-connect" data-modal="connect-modal">WORK TOGETHER</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- INTERACTIVE MODAL: GALLERY PREVIEW -->
-  <div class="modal-backdrop" id="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" hidden>
-    <div class="modal-box modal-box-wide">
-      <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
-      <p class="modal-eyebrow">SELECTED WORKS</p>
-      <h2 class="modal-title" id="gallery-modal-title">PORTFOLIO GALLERY</h2>
-      <div class="gallery-preview-grid">
-        <div class="gallery-thumb"><img src="image02.jpg" alt="Weddings gallery" onerror="this.classList.add('img-missing')"><span>WEDDINGS</span></div>
-        <div class="gallery-thumb"><img src="image03.jpg" alt="Elopements gallery" onerror="this.classList.add('img-missing')"><span>ELOPEMENTS</span></div>
-        <div class="gallery-thumb"><img src="image04.jpg" alt="Intimate gallery" onerror="this.classList.add('img-missing')"><span>INTIMATE</span></div>
-        <div class="gallery-thumb"><img src="image05.jpg" alt="Adventure gallery" onerror="this.classList.add('img-missing')"><span>ADVENTURE</span></div>
-        <div class="gallery-thumb"><img src="image06.jpg" alt="Lifestyle gallery" onerror="this.classList.add('img-missing')"><span>LIFESTYLE</span></div>
-        <div class="gallery-thumb"><img src="image08.jpg" alt="Editorial couple" onerror="this.classList.add('img-missing')"><span>EDITORIAL</span></div>
-      </div>
-      <div class="modal-actions">
-        <button type="button" class="btn-connect" data-modal="connect-modal">BOOK YOUR SESSION</button>
-      </div>
-    </div>
-  </div>
+  <!-- ======================================================================
+       FLOATING WHATSAPP BUTTON
+       ====================================================================== -->
+  <a href="https://wa.me/27671437242?text=Hello%20JOSED%20CONCEPT%2C%20I%20would%20like%20to%20enquire%20about%20your%20photography%20and%20videography%20services." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with JOSED CONCEPT on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
 
   <script>
-/**
- * JOSED CONCEPT Photography — Interactive Functionality
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Category Details Data for "LEARN MORE" buttons
-  const categoryData = {
-    weddings: {
-      title: 'WEDDINGS',
-      eyebrow: 'COLLECTION 01',
-      description:
-        'Full-story coverage crafted for couples celebrating with family and friends. From quiet morning preparations to candlelit toasts and high-energy dance floors, every moment is documented with timeless artistry.',
-      highlights:
-        'Collections available for 6, 8, or 10 hours • Complimentary Colorado engagement session • Timeline planning assistance • High-resolution online gallery'
-    },
-    elopements: {
-      title: 'ELOPEMENTS',
-      eyebrow: 'COLLECTION 02',
-      description:
-        'Intimate, intentional celebrations set against Colorado mountain peaks, alpine lakes, or sweeping desert landscapes. Designed for couples prioritizing meaningful experiences over traditional timelines.',
-      highlights:
-        'Starting at $2,200 (4 hours) • Location scouting & permit guidance • Custom adventure timeline • Full print rights & 48-hour sneak peeks'
-    },
-    intimate: {
-      title: 'INTIMATE',
-      eyebrow: 'COLLECTION 03',
-      description:
-        'Editorial boudoir and sensual couples portraiture captured in natural light. Celebratory, empowering sessions tailored to honor connection, confidence, and vulnerability.',
-      highlights:
-        'Starting at $850 • Studio or private indoor/outdoor setting • Guided posing & styling guide • Private password-protected gallery'
-    },
-    adventure: {
-      title: 'ADVENTURE',
-      eyebrow: 'COLLECTION 04',
-      description:
-        'Sunrise hikes, coastal cliffs, and windswept engagement or anniversary sessions for couples who feel most alive outdoors.',
-      highlights:
-        'Starting at $950 • Up to 2 scenic locations • Outfit change guidance • High-resolution downloadable gallery'
-    },
-    lifestyle: {
-      title: 'LIFESTYLE',
-      eyebrow: 'COLLECTION 05',
-      description:
-        'Warm, documentary motherhood, newborn, and family sessions focused on genuine connection, gentle movement, and quiet everyday magic.',
-      highlights:
-        'Starting at $750 • In-home or golden-hour outdoor session • Relaxed pace for little ones • Full gallery of edited high-resolution images'
-    }
-  };
+  // Set current year dynamically
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
-  // 2. Wedding Packages Accordion Behavior
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-  accordionHeaders.forEach((header) => {
-    header.addEventListener('click', () => {
-      const isExpanded = header.getAttribute('aria-expanded') === 'true';
-      const panel = header.nextElementSibling;
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.getElementById('nav-links');
 
-      // Close other open panels for clean editorial presentation
-      accordionHeaders.forEach((otherHeader) => {
-        if (otherHeader !== header) {
-          otherHeader.setAttribute('aria-expanded', 'false');
-          if (otherHeader.nextElementSibling) {
-            otherHeader.nextElementSibling.hidden = true;
-          }
-        }
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       });
+    });
+  }
 
-      header.setAttribute('aria-expanded', String(!isExpanded));
-      if (panel) {
-        panel.hidden = isExpanded;
+  // Portfolio Category Filtering
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+
+  function applyGalleryFilter(category) {
+    filterButtons.forEach((btn) => {
+      btn.classList.toggle('active', btn.getAttribute('data-filter') === category);
+    });
+
+    galleryItems.forEach((item) => {
+      const itemCategory = item.getAttribute('data-category');
+      if (category === 'all' || itemCategory === category) {
+        item.classList.remove('hidden-item');
+      } else {
+        item.classList.add('hidden-item');
       }
+    });
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      applyGalleryFilter(btn.getAttribute('data-filter'));
     });
   });
 
-  // 3. Modal Management
-  const allModals = document.querySelectorAll('.modal-backdrop');
+  // Service "VIEW GALLERY" buttons trigger matching gallery category filter
+  document.querySelectorAll('.service-gallery-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      const targetFilter = link.getAttribute('data-filter') || 'all';
+      applyGalleryFilter(targetFilter);
+    });
+  });
 
-  function openModal(modalId) {
-    allModals.forEach((m) => (m.hidden = true));
-    const target = document.getElementById(modalId);
-    if (target) {
-      target.hidden = false;
-      document.body.style.overflow = 'hidden';
-    }
+  // Lightbox Gallery Viewer
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCat = document.getElementById('lightbox-cat');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+
+  let currentVisibleItems = [];
+  let currentIndex = 0;
+
+  function updateLightboxContent(index) {
+    if (!currentVisibleItems.length) return;
+    currentIndex = (index + currentVisibleItems.length) % currentVisibleItems.length;
+    const activeItem = currentVisibleItems[currentIndex];
+    const src = activeItem.getAttribute('data-src');
+    const cat = activeItem.getAttribute('data-title');
+    const captionEl = activeItem.querySelector('.gallery-item-caption span:first-child');
+
+    lightboxImg.src = src;
+    lightboxCat.textContent = cat || '';
+    lightboxTitle.textContent = captionEl ? captionEl.textContent : '';
   }
 
-  function closeAllModals() {
-    allModals.forEach((m) => (m.hidden = true));
+  function openLightbox(clickedItem) {
+    currentVisibleItems = galleryItems.filter((item) => !item.classList.contains('hidden-item'));
+    const idx = currentVisibleItems.indexOf(clickedItem);
+    updateLightboxContent(idx >= 0 ? idx : 0);
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
     document.body.style.overflow = '';
   }
 
-  // Triggers with data-modal attribute
-  document.querySelectorAll('[data-modal]').forEach((trigger) => {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      const modalId = trigger.getAttribute('data-modal');
-      const presetPackage = trigger.getAttribute('data-package');
-
-      openModal(modalId);
-
-      if (presetPackage && modalId === 'connect-modal') {
-        const selectEl = document.getElementById('inq-collection');
-        if (selectEl) {
-          for (const opt of selectEl.options) {
-            if (opt.value.toLowerCase().includes(presetPackage.toLowerCase())) {
-              selectEl.value = opt.value;
-              break;
-            }
-          }
-        }
-      }
-    });
+  galleryItems.forEach((item) => {
+    item.addEventListener('click', () => openLightbox(item));
   });
 
-  // Category "LEARN MORE" buttons
-  const catModalTitle = document.getElementById('cat-modal-title');
-  const catModalEyebrow = document.getElementById('cat-modal-eyebrow');
-  const catModalDesc = document.getElementById('cat-modal-desc');
-  const catModalHighlights = document.getElementById('cat-modal-highlights');
-  const catModalInquire = document.getElementById('cat-modal-inquire');
-  let activeCategoryName = 'Weddings';
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', () => updateLightboxContent(currentIndex - 1));
+  if (lightboxNext) lightboxNext.addEventListener('click', () => updateLightboxContent(currentIndex + 1));
 
-  document.querySelectorAll('.btn-learn-more').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-category');
-      const info = categoryData[key];
-      if (!info) return;
-
-      activeCategoryName = info.title;
-      catModalEyebrow.textContent = info.eyebrow;
-      catModalTitle.textContent = info.title;
-      catModalDesc.textContent = info.description;
-      catModalHighlights.textContent = info.highlights;
-      openModal('category-modal');
-    });
-  });
-
-  if (catModalInquire) {
-    catModalInquire.addEventListener('click', () => {
-      openModal('connect-modal');
-      const selectEl = document.getElementById('inq-collection');
-      if (selectEl) {
-        for (const opt of selectEl.options) {
-          if (opt.value.toLowerCase().includes(activeCategoryName.toLowerCase())) {
-            selectEl.value = opt.value;
-            break;
-          }
-        }
-      }
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
     });
   }
-
-  // Close buttons & backdrop click & Escape key
-  document.querySelectorAll('.modal-close').forEach((btn) => {
-    btn.addEventListener('click', closeAllModals);
-  });
-
-  allModals.forEach((backdrop) => {
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) {
-        closeAllModals();
-      }
-    });
-  });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeAllModals();
+    if (lightbox && !lightbox.hidden) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') updateLightboxContent(currentIndex - 1);
+      if (e.key === 'ArrowRight') updateLightboxContent(currentIndex + 1);
     }
   });
-
-  // 4. Inquiry Form Validation & Submission Feedback
-  const inquiryForm = document.getElementById('inquiry-form');
-  const formFeedback = document.getElementById('form-feedback');
-
-  if (inquiryForm) {
-    inquiryForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('inq-name').value.trim();
-      const email = document.getElementById('inq-email').value.trim();
-      const message = document.getElementById('inq-message').value.trim();
-
-      if (!name || !email || !message) {
-        formFeedback.textContent = 'Please complete your name, email address, and vision details.';
-        return;
-      }
-
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        formFeedback.textContent = 'Please enter a valid email address.';
-        return;
-      }
-
-      formFeedback.textContent = `Thank you, ${name}. Your inquiry has been received—Josed Concept will respond within 24–48 hours.`;
-      inquiryForm.reset();
-    });
-  }
 });
-
   </script>
-
-<!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/27671437242" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  </a>
 </body>
 </html>
