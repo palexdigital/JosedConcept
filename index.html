@@ -1002,7 +1002,7 @@ button {
 }
 
 /* ==========================================================================
-   10. RESPONSIVE DESIGN (DESKTOP, TABLET & MOBILE)
+   10. RESPONSIVE DESIGN (DESKTOP, TABLET & MOBILE — COMPACT DESKTOP ADAPTATION)
    ========================================================================== */
 
 @media (max-width: 1120px) {
@@ -1035,8 +1035,9 @@ button {
 
 @media (max-width: 860px) {
   .main-nav {
-    padding: 20px 24px;
+    padding: 18px 20px;
     grid-template-columns: auto 1fr auto;
+    gap: 10px;
   }
 
   .mobile-menu-btn {
@@ -1047,10 +1048,12 @@ button {
     position: fixed;
     inset: 0;
     background-color: rgba(17, 17, 16, 0.98);
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 28px;
+    align-content: center;
+    gap: 18px 24px;
+    padding: 24px;
     z-index: 25;
     opacity: 0;
     pointer-events: none;
@@ -1063,84 +1066,342 @@ button {
   }
 
   .nav-left .nav-link {
-    font-size: 0.9rem;
-    letter-spacing: 0.28em;
-  }
-
-  .nav-right .nav-link {
-    display: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
   }
 
   .about-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .about-image-frame {
-    max-width: 520px;
-    margin: 0 auto;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+    align-items: center;
   }
 }
 
 @media (max-width: 640px) {
   .hero-section {
-    min-height: 78vh;
+    min-height: 520px;
+    max-height: 640px;
   }
 
   .main-nav {
-    padding: 16px 18px;
+    padding: 12px 12px;
+    gap: 6px;
+  }
+
+  .mobile-menu-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobile-menu-btn span {
+    width: 20px;
+  }
+
+  .brand-logo-img {
+    max-height: 32px;
   }
 
   .wordmark-main {
-    font-size: 1.08rem;
+    font-size: 0.88rem;
+    letter-spacing: 0.1em;
   }
 
-  .btn-primary {
-    padding: 12px 22px;
-    font-size: 0.62rem;
+  .wordmark-sub {
+    font-size: 0.42rem;
+    letter-spacing: 0.2em;
   }
 
-  .services-section,
-  .about-section,
-  .gallery-section,
-  .pillars-section,
-  .contact-section {
-    padding-left: 20px;
-    padding-right: 20px;
+  .nav-right .btn-primary {
+    padding: 8px 10px;
+    font-size: 0.5rem;
+    letter-spacing: 0.12em;
   }
 
+  .hero-center-content {
+    padding: 16px 14px 18px;
+  }
+
+  .hero-brand-tag {
+    font-size: 0.52rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+
+  .hero-title {
+    font-size: 1.55rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.72rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .hero-center-content .btn-primary {
+    padding: 10px 18px;
+    font-size: 0.56rem;
+    letter-spacing: 0.16em;
+  }
+
+  .services-section {
+    padding: 40px 12px 52px;
+  }
+
+  .section-header-center {
+    margin-bottom: 24px;
+  }
+
+  .section-eyebrow {
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 6px;
+  }
+
+  .section-heading {
+    font-size: 1.25rem;
+  }
+
+  /* Compact multi-column grid mirroring desktop strip */
   .services-grid {
-    grid-template-columns: 1fr;
-    max-width: 440px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .service-card:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .service-card:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  .service-img-box {
+    aspect-ratio: 4 / 4.2;
+  }
+
+  .service-body {
+    padding: 10px 8px 12px;
+  }
+
+  .service-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+
+  .service-desc {
+    font-size: 0.58rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .btn-outline {
+    padding: 6px 8px;
+    font-size: 0.48rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Side-by-side About layout preserved on mobile */
+  .about-section {
+    padding: 44px 12px;
+  }
+
+  .about-container {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .about-image-frame {
+    aspect-ratio: 3 / 4;
+    max-width: none;
+  }
+
+  .about-heading {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .about-text {
+    font-size: 0.64rem;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .about-motto {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 0.82rem;
+  }
+
+  /* Gallery & Filters adapted as compact multi-column grid */
+  .gallery-section {
+    padding: 46px 12px 56px;
+  }
+
+  .gallery-filters {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .filter-btn {
+    padding: 6px 8px;
+    font-size: 0.48rem;
+    letter-spacing: 0.1em;
   }
 
   .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .gallery-item,
+  .gallery-item.item-wide,
+  .gallery-item.item-half,
+  .gallery-item.item-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 0;
+    aspect-ratio: 4 / 4.2;
+  }
+
+  .gallery-item-overlay {
+    padding: 10px;
+  }
+
+  .gallery-item-cat {
+    font-size: 0.46rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gallery-item-caption {
+    font-size: 0.72rem;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .zoom-hint {
+    font-size: 0.44rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* 2x2 Pillars grid on mobile */
+  .pillars-section {
+    padding: 44px 12px;
   }
 
   .pillars-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .pillar-card {
+    padding: 14px 12px;
+  }
+
+  .pillar-number {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .pillar-title {
+    font-size: 0.84rem;
+    margin-bottom: 6px;
+  }
+
+  .pillar-desc {
+    font-size: 0.62rem;
+    line-height: 1.5;
+  }
+
+  /* Compact Contact Section */
+  .contact-section {
+    padding: 48px 14px;
+  }
+
+  .contact-heading {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-desc {
+    font-size: 0.7rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .contact-section .btn-primary {
+    padding: 10px 18px;
+    font-size: 0.56rem;
+    letter-spacing: 0.16em;
+  }
+
+  .contact-direct-links {
+    margin-top: 14px;
+    gap: 8px 16px;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Compact Footer */
+  .site-footer {
+    padding: 28px 12px 20px;
+  }
+
+  .footer-inner {
+    gap: 12px;
+  }
+
+  .footer-brand {
+    font-size: 0.95rem;
+  }
+
+  .footer-nav-row {
+    gap: 8px 14px;
+  }
+
+  .footer-nav-row a {
+    font-size: 0.5rem;
+    letter-spacing: 0.14em;
+  }
+
+  .footer-contact-row {
+    gap: 8px 14px;
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-copyright {
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
   }
 
   .lightbox-nav {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
   }
 
   .lightbox-prev {
-    left: 10px;
+    left: 8px;
   }
 
   .lightbox-next {
-    right: 10px;
+    right: 8px;
   }
 
   .whatsapp-float {
-    bottom: 18px;
-    right: 18px;
-    width: 50px;
-    height: 50px;
+    bottom: 14px;
+    right: 14px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
   }
 }
   </style>
